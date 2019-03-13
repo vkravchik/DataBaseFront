@@ -9,6 +9,7 @@ import {CdkTableModule} from "@angular/cdk/table";
 import { UserComponent } from './page/user/user.component';
 import { EditComponent } from './page/user/edit/edit.component';
 import {RouterModule, Routes} from "@angular/router";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent },
@@ -27,6 +28,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatButtonModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatTableModule,
     CdkTableModule,
