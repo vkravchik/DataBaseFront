@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../../services/user.service";
 import {User} from "../../../model/User";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {FormControl, Validators} from "@angular/forms";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-edit',
@@ -26,12 +27,14 @@ export class EditComponent implements OnInit {
   ]);
 
   constructor(private _user: UserService,
-              private router: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router,
+              private toastr: ToastrService) { }
 
   ngOnInit() {
     // this.currentUser = this._user.user;
     // if (this.currentUser === undefined) {
-      this._user.getSingle(this.router.snapshot.params['id']).subscribe(
+      this._user.getSingle(this.route.snapshot.params['id']).subscribe(
         (res: User) => {
           this.currentUser = res;
           this.user.email = this.currentUser.email;
@@ -43,9 +46,23 @@ export class EditComponent implements OnInit {
 
   updateUser(id) {
     this.user.id = id;
-    this._user.updateUser(id, this.user).subscribe((res: User) => {
-      this.currentUser = res;
+    this._user.updateUser(id, this.user).subscribe(
+      (res: User) => {
+        this.currentUser = res;
+        this.toastr.success('Update success', 'Success');
+    },
+      (error) => {this.toastr.error('Updating Error', 'Error')});
+  }
 
-    });
+  deleteUser(id: number) {
+    this._user.deleteUser(id).subscribe(
+      (res) => {
+        this.router.navigate(['/user']);
+        this.toastr.success('Delete success', 'Success');
+      },
+      (error) => {
+
+      }
+    )
   }
 }

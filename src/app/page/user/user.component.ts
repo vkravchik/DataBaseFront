@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../model/User";
 import {UserService} from "../../services/user.service";
-import {Router, RouterOutlet} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user',
@@ -23,7 +23,6 @@ export class UserComponent implements OnInit {
 
   tableClick(id) {
     this._user.getSingle(id).subscribe((res: User) => {
-      console.log('ALL DATA CHOISE USER IS: ' + res.password);
       this.router.navigate(['user/', id])
     });
   }

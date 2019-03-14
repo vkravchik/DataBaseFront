@@ -10,6 +10,7 @@ import { UserComponent } from './page/user/user.component';
 import { EditComponent } from './page/user/edit/edit.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ToastrModule} from "ngx-toastr";
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent },
@@ -25,16 +26,17 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatFormFieldModule,
+    FormsModule,
     MatButtonModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    BrowserAnimationsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     MatTableModule,
     CdkTableModule,
     MatInputModule,
-    RouterModule.forRoot(appRoutes)
+    ToastrModule.forRoot(), // ToastrModule added
+    RouterModule.forRoot(appRoutes) // Routes
   ],
   providers: [],
   bootstrap: [AppComponent]

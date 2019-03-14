@@ -19,6 +19,11 @@
 
     <div class="button">
       <button mat-raised-button
+              color="warn"
+              (click)="deleteUser(currentUser.id)"
+      >Warn</button>
+
+      <button mat-raised-button
               color="primary"
               [disabled]="errorUser"
               (click)="updateUser(currentUser.id)"

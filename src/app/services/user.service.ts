@@ -53,4 +53,17 @@ export class UserService {
       catchError(this._error.handleError)
     )
   }
+
+  deleteUser(id: number): Observable<any> {
+    let url = environment.apiUrl + environment.apiUser + '/' + id;
+
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.delete(url, {headers: headers}).pipe(
+      map(res => {
+        return res;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
 }
