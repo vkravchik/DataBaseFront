@@ -13,6 +13,6 @@ export class ErrorService {
 
   handleError(error: HttpErrorResponse) {
     console.log(error);
-    return throwError('Error! something went wrong.');
+    return throwError(error);
   }
 }

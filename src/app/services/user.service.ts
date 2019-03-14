@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {User} from "../model/User";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpRequest} from "@angular/common/http";
 import {ErrorService} from "./error.service";
-import {ObserveOnMessage} from "rxjs/internal/operators/observeOn";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {catchError, map} from "rxjs/operators";
+import {RequestOptions, Headers} from "@angular/http";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ import {catchError, map} from "rxjs/operators";
 export class UserService {
   users: User[];
   user: User;
+  editedUser: User;
 
   constructor(private http: HttpClient,
               private _error: ErrorService) { }
@@ -32,6 +33,22 @@ export class UserService {
       map((res: User) => {
         this.user = res;
         return this.user;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
+
+  updateUser(id: number, user: any): Observable<User> {
+    let url = environment.apiUrl + environment.apiUser + '/' + id;
+
+    let body = JSON.stringify(user);
+
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.put(url, body, {headers: headers}).pipe(
+      map((res: User) => {
+        this.editedUser = res;
+        return this.editedUser;
       }),
       catchError(this._error.handleError)
     )

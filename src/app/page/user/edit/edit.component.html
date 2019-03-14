@@ -1,24 +1,28 @@
 <form class="user-form">
   <div class="form">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Email" [value]="currentUser?.email" [formControl]="emailFormControl">
+      <input matInput
+             [(ngModel)]="user.email"
+             name="email"
+             placeholder="Email"
+             [value]="currentUser?.email"
+             [formControl]="emailFormControl">
     </mat-form-field>
-    <!--<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">-->
-      <!--Please enter a valid email address-->
-    <!--</mat-error>-->
-    <!--<mat-error *ngIf="emailFormControl.hasError('required')">-->
-      <!--Email is <strong>required</strong>-->
-    <!--</mat-error>-->
 
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Password" [value]="currentUser?.password">
+      <input matInput
+             [(ngModel)]="user.password"
+             name="pass"
+             placeholder="Password"
+             [value]="currentUser?.password">
     </mat-form-field>
-    <!--<mat-error *ngIf="passwordFormControl.hasError('required')">-->
-      <!--Password is <strong>required</strong>-->
-    <!--</mat-error>-->
 
     <div class="button">
-      <button mat-raised-button color="primary" [disabled]="errorUser">{{errorUser ? errorUser : 'Save'}}</button>
+      <button mat-raised-button
+              color="primary"
+              [disabled]="errorUser"
+              (click)="updateUser(currentUser.id)"
+      >{{errorUser ? 'User does not exist' : 'Save'}}</button>
     </div>
   </div>
 </form>

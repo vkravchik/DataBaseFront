@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
 
   tableClick(id) {
     this._user.getSingle(id).subscribe((res: User) => {
-      console.log('ALL DATA CHOISE USER IS: ' + res.email);
+      console.log('ALL DATA CHOISE USER IS: ' + res.password);
       this.router.navigate(['user/', id])
     });
   }
