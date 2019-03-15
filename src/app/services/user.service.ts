@@ -14,6 +14,7 @@ export class UserService {
   users: User[];
   user: User;
   editedUser: User;
+  newUser: User;
 
   constructor(private http: HttpClient,
               private _error: ErrorService) { }
@@ -38,7 +39,7 @@ export class UserService {
     )
   }
 
-  updateUser(id: number, user: any): Observable<User> {
+  update(id: number, user: any): Observable<User> {
     let url = environment.apiUrl + environment.apiUser + '/' + id;
 
     let body = JSON.stringify(user);
@@ -54,13 +55,29 @@ export class UserService {
     )
   }
 
-  deleteUser(id: number): Observable<any> {
+  delete(id: number): Observable<any> {
     let url = environment.apiUrl + environment.apiUser + '/' + id;
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.http.delete(url, {headers: headers}).pipe(
       map(res => {
+        return res;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
+
+  add(user: any): Observable<User> {
+    let url = environment.apiUrl + environment.apiUser + '/add';
+
+    let body = JSON.stringify(user);
+
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.post(url, body, {headers: headers}).pipe(
+      map((res: User) => {
+        this.newUser = res;
         return res;
       }),
       catchError(this._error.handleError)

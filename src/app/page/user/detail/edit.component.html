@@ -18,16 +18,18 @@
     </mat-form-field>
 
     <div class="button">
-      <button mat-raised-button
+      <button mat-icon-button
               color="warn"
-              (click)="deleteUser(currentUser.id)"
-      >Warn</button>
+              (click)="deleteUser(currentUser.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
 
-      <button mat-raised-button
+      <button mat-icon-button
               color="primary"
               [disabled]="errorUser"
-              (click)="updateUser(currentUser.id)"
-      >{{errorUser ? 'User does not exist' : 'Save'}}</button>
+              (click)="updateUser(currentUser.id)">
+        <mat-icon>update</mat-icon>
+      </button>
     </div>
   </div>
 </form>

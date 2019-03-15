@@ -8,3 +8,8 @@ tr {
 .mat-table .mat-row:hover {
   background: rgba(0, 0, 0, 0.04);
 }
+.before-table {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

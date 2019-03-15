@@ -32,8 +32,6 @@ export class EditComponent implements OnInit {
               private toastr: ToastrService) { }
 
   ngOnInit() {
-    // this.currentUser = this._user.user;
-    // if (this.currentUser === undefined) {
       this._user.getSingle(this.route.snapshot.params['id']).subscribe(
         (res: User) => {
           this.currentUser = res;
@@ -41,12 +39,11 @@ export class EditComponent implements OnInit {
           this.user.password = this.currentUser.password;
       },
         (error) => {this.errorUser = true})
-    // }
   }
 
   updateUser(id) {
     this.user.id = id;
-    this._user.updateUser(id, this.user).subscribe(
+    this._user.update(id, this.user).subscribe(
       (res: User) => {
         this.currentUser = res;
         this.toastr.success('Update success', 'Success');
@@ -55,7 +52,7 @@ export class EditComponent implements OnInit {
   }
 
   deleteUser(id: number) {
-    this._user.deleteUser(id).subscribe(
+    this._user.delete(id).subscribe(
       (res) => {
         this.router.navigate(['/user']);
         this.toastr.success('Delete success', 'Success');
