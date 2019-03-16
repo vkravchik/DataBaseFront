@@ -15,7 +15,6 @@ export class UserComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'email', 'password'];
   users = new MatTableDataSource<User>();
-  // users: User[];
   newUser = {
     email: null,
     password: null
