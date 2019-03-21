@@ -248,4 +248,34 @@ export class FakeBackService {
     return this.autoProp;
   }
 
+  public getPersonal(): AutoPersonal[] {
+    this.initPersonal();
+    return this.autoPersonal;
+  }
+
+  public getProblem(): AutoProblem[] {
+    this.initProblem();
+    return this.autoProblem;
+  }
+
+  public getRepair(): AutoRepair[] {
+    this.initRepair();
+    return this.autoRepair;
+  }
+
+  public getRoute(): AutoRoute[] {
+    this.initRoute();
+    return this.autoRoute;
+  }
+
+  public getSaleBuy(): AutoSaleBuy[] {
+    this.initSaleBuy();
+    return this.autoSaleBuy;
+  }
+
+  public getStreet(): AutoStreet[] {
+    this.initStreet();
+    return this.autoStreet;
+  }
+
 }

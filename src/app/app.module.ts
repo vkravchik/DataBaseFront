@@ -31,6 +31,12 @@ import { HardRouteComponent } from './page/hard-route/hard-route.component';
 import { InfrastructComponent } from './page/infrastruct/infrastruct.component';
 import { MarkaComponent } from './page/marka/marka.component';
 import {PropComponent} from "./page/prop/prop.component";
+import { PersonalComponent } from './page/personal/personal.component';
+import { ProblemComponent } from './page/problem/problem.component';
+import { RepairComponent } from './page/repair/repair.component';
+import { RouteComponent } from './page/route/route.component';
+import { SaleBuyComponent } from './page/sale-buy/sale-buy.component';
+import { StreetComponent } from './page/street/street.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent },
@@ -47,6 +53,12 @@ const appRoutes: Routes = [
   { path: 'infrastruct', component: InfrastructComponent },
   { path: 'marka', component: MarkaComponent },
   { path: 'prop', component: PropComponent },
+  { path: 'personal', component: PersonalComponent },
+  { path: 'problem', component: ProblemComponent },
+  { path: 'repair', component: RepairComponent },
+  { path: 'route', component: RouteComponent },
+  { path: 'saleBuy', component: SaleBuyComponent },
+  { path: 'street', component: StreetComponent },
   { path: '**', component: UserComponent },
 ];
 
@@ -68,6 +80,12 @@ const appRoutes: Routes = [
     InfrastructComponent,
     MarkaComponent,
     PropComponent,
+    PersonalComponent,
+    ProblemComponent,
+    RepairComponent,
+    RouteComponent,
+    SaleBuyComponent,
+    StreetComponent,
   ],
   imports: [
     BrowserModule,
