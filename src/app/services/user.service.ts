@@ -15,6 +15,7 @@ export class UserService {
   user: User;
   editedUser: User;
   newUser: User;
+  dialogData: User;
 
   constructor(private http: HttpClient,
               private _error: ErrorService) { }
@@ -82,5 +83,9 @@ export class UserService {
       }),
       catchError(this._error.handleError)
     )
+  }
+
+  dialogUpdate(user: any) :void {
+    this.dialogData = user;
   }
 }
