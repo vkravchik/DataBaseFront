@@ -85,7 +85,11 @@ export class UserService {
     )
   }
 
-  dialogUpdate(user: any) :void {
+  dialogUpdate(user: any): void {
+    this.dialogData = user;
+  }
+
+  dialogAdd(user: any): void {
     this.dialogData = user;
   }
 }

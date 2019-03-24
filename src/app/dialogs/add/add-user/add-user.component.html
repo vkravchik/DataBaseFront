@@ -1,11 +1,11 @@
-<form class="user-form">
+<form class="user-form" (ngSubmit)="submit" #formControl="ngForm">
   <div class="form">
     <mat-form-field class="example-full-width">
       <input matInput
              [(ngModel)]="user.email"
              name="email"
              placeholder="Email"
-             [value]="currentUser?.email"
+             [value]="user?.email"
              [formControl]="emailFormControl">
     </mat-form-field>
 
@@ -14,22 +14,12 @@
              [(ngModel)]="user.password"
              name="pass"
              placeholder="Password"
-             [value]="currentUser?.password">
+             [value]="user?.password">
     </mat-form-field>
 
     <div class="button">
-      <button mat-icon-button
-              color="warn"
-              (click)="deleteUser(currentUser.id)">
-        <mat-icon>delete</mat-icon>
-      </button>
-
-      <button mat-icon-button
-              color="primary"
-              [disabled]="errorUser"
-              (click)="updateUser(currentUser.id)">
-        <mat-icon>update</mat-icon>
-      </button>
+      <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopAdd()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
     </div>
   </div>
 </form>

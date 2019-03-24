@@ -18,3 +18,9 @@ button:hover {
   display: flex;
   justify-content: flex-end;
 }
+.mat-cell {
+  justify-content: flex-end;
+}
+.mat-header-cell {
+  justify-content: flex-end;
+}

@@ -16,13 +16,15 @@ import {AutoSaleBuy} from "../model/AutoSaleBuy";
 import {AutoRoute} from "../model/AutoRoute";
 import {AutoRepair} from "../model/AutoRepair";
 import {AutoProp} from "../model/AutoProp";
+import {BehaviorSubject, Observable} from "rxjs";
+import {MatTableDataSource} from "@angular/material";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FakeBackService {
   private auto: Auto[];
-  private autoCategory: AutoCategory[];
+  private autoCategory: BehaviorSubject<AutoCategory[]> = new BehaviorSubject<AutoCategory[]>([]);
   private autoMarka: AutoMarka[];
   private autoBrigada: AutoBrigada[];
   private autoBrigadir: AutoBrigadir[];
@@ -39,15 +41,30 @@ export class FakeBackService {
   private autoRepair: AutoRepair[];
   private autoProp: AutoProp[];
 
-  constructor() { }
+  public dialogData: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+
+  constructor() {
+    this.initCategory();
+
+  }
 
   private initCategory() {
-    this.autoCategory = [
-      {id: 1, name: 'Грузовий'},
-      {id: 2, name: 'Легковий'},
-      {id: 3, name: 'Автобус'},
-      {id: 4, name: 'Таксі'},
-    ];
+
+    let autoCategory = [
+        {id: 1, name: 'Грузовий'},
+        {id: 2, name: 'Легковий'},
+        {id: 3, name: 'Автобус'},
+        {id: 4, name: 'Таксі'},
+      ];
+
+    this.autoCategory.next(autoCategory);
+
+    // this.autoCategory = [
+    //   {id: 1, name: 'Грузовий'},
+    //   {id: 2, name: 'Легковий'},
+    //   {id: 3, name: 'Автобус'},
+    //   {id: 4, name: 'Таксі'},
+    // ];
   }
 
   private initMarka() {
@@ -208,8 +225,7 @@ export class FakeBackService {
     return this.autoBrigadir;
   }
 
-  public getCategory(): AutoCategory[] {
-    this.initCategory();
+  public getCategory(): Observable<AutoCategory[]> {
     return this.autoCategory;
   }
 
@@ -278,4 +294,14 @@ export class FakeBackService {
     return this.autoStreet;
   }
 
+//  EDIT
+  public editCategory(category: AutoCategory) {
+    // this.dialogData = category;
+    this.dialogData.next(category);
+  }
+
+//  RETURN DATA
+  public getData(): Observable<any> {
+    return this.dialogData;
+  }
 }

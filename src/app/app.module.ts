@@ -8,13 +8,12 @@ import {
   MatButtonModule, MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
-  MatProgressSpinnerModule,
+  MatInputModule, MatListModule, MatPaginatorModule,
+  MatProgressSpinnerModule, MatSidenavModule, MatSortModule,
   MatTableModule, MatToolbarModule
 } from "@angular/material";
 import {CdkTableModule} from "@angular/cdk/table";
 import { UserComponent } from './page/user/user.component';
-import { EditComponent } from './page/user/detail/edit.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from "ngx-toastr";
@@ -37,11 +36,11 @@ import { RepairComponent } from './page/repair/repair.component';
 import { RouteComponent } from './page/route/route.component';
 import { SaleBuyComponent } from './page/sale-buy/sale-buy.component';
 import { StreetComponent } from './page/street/street.component';
+import { EditCategoryComponent } from './dialogs/edit/edit-category/edit-category.component';
+import { AddUserComponent } from './dialogs/add/add-user/add-user.component';
 
 const appRoutes: Routes = [
-  { path: '', component: UserComponent },
-  { path: 'user/:id', component: EditComponent },
-
+  { path: '', component: UserComponent, data: {title: 'User'} },
   { path: 'auto', component: AutoComponent },
   { path: 'brigada', component: BrigadaComponent },
   { path: 'brigadir', component: BrigadirComponent },
@@ -66,7 +65,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     UserComponent,
-    EditComponent,
     EditUserComponent,
     DeleteUserComponent,
     AutoComponent,
@@ -86,27 +84,41 @@ const appRoutes: Routes = [
     RouteComponent,
     SaleBuyComponent,
     StreetComponent,
+    EditCategoryComponent,
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
     FormsModule,
-    MatButtonModule,
     HttpClientModule,
+    CdkTableModule,
+
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    ToastrModule.forRoot(), // ToastrModule added
+    RouterModule.forRoot(appRoutes), // Routes
+
+    //  MATERIAL
+    MatButtonModule,
+    MatTableModule,
+    MatDialogModule,
     MatIconModule,
     MatToolbarModule,
-    MatDialogModule,
-    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
-    MatTableModule,
-    CdkTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
     MatInputModule,
-    ToastrModule.forRoot(), // ToastrModule added
-    RouterModule.forRoot(appRoutes) // Routes
+    MatSidenavModule,
+    MatListModule,
+    MatSortModule,
   ],
   providers: [],
   entryComponents: [
+    // ADD
+    AddUserComponent,
+    // EDIT
+    EditCategoryComponent,
     EditUserComponent,
+    // DELETE
     DeleteUserComponent,
   ],
   bootstrap: [AppComponent]
