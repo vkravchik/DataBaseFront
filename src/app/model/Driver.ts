@@ -1,7 +1,8 @@
+import {Auto} from "./Auto";
+
 export interface Driver {
   id: number;
   name: string;
   surname: string;
-  id_auto: number;
-
+  auto: Auto;
 }

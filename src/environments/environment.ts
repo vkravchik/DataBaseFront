@@ -7,6 +7,8 @@ export const environment = {
   apiUrl: 'http://localhost:8080/rest/',
   apiUser: '/users',
   apiDriver: '/drivers',
+  apiCategory: '/category',
+  apiMarka: '/marka',
 };
 
 /*

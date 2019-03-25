@@ -9,7 +9,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule, MatListModule, MatPaginatorModule,
-  MatProgressSpinnerModule, MatSidenavModule, MatSortModule,
+  MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSortModule,
   MatTableModule, MatToolbarModule
 } from "@angular/material";
 import {CdkTableModule} from "@angular/cdk/table";
@@ -38,6 +38,9 @@ import { SaleBuyComponent } from './page/sale-buy/sale-buy.component';
 import { StreetComponent } from './page/street/street.component';
 import { EditCategoryComponent } from './dialogs/edit/edit-category/edit-category.component';
 import { AddUserComponent } from './dialogs/add/add-user/add-user.component';
+import { AddDriverComponent } from './dialogs/add/add-driver/add-driver.component';
+import { DeleteDriverComponent } from './dialogs/delete/delete-driver/delete-driver.component';
+import { EditDriverComponent } from './dialogs/edit/edit-driver/edit-driver.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -86,6 +89,9 @@ const appRoutes: Routes = [
     StreetComponent,
     EditCategoryComponent,
     AddUserComponent,
+    AddDriverComponent,
+    DeleteDriverComponent,
+    EditDriverComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,16 +116,20 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatSortModule,
+    MatSelectModule,
   ],
   providers: [],
   entryComponents: [
     // ADD
     AddUserComponent,
+    AddDriverComponent,
     // EDIT
     EditCategoryComponent,
+    EditDriverComponent,
     EditUserComponent,
     // DELETE
     DeleteUserComponent,
+    DeleteDriverComponent,
   ],
   bootstrap: [AppComponent]
 })

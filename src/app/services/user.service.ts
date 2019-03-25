@@ -15,7 +15,7 @@ export class UserService {
   user: User;
   editedUser: User;
   newUser: User;
-  dialogData: User;
+  // dialogData: User;
 
   constructor(private http: HttpClient,
               private _error: ErrorService) { }
@@ -85,11 +85,11 @@ export class UserService {
     )
   }
 
-  dialogUpdate(user: any): void {
-    this.dialogData = user;
-  }
-
-  dialogAdd(user: any): void {
-    this.dialogData = user;
-  }
+  // dialogUpdate(user: any): void {
+  //   this.dialogData = user;
+  // }
+  //
+  // dialogAdd(user: any): void {
+  //   this.dialogData = user;
+  // }
 }

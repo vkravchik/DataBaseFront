@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {UserService} from "../../../services/user.service";
+import {DialogService} from "../../../services/dialog.service";
 
 @Component({
   selector: 'app-add-user',
@@ -22,7 +23,8 @@ export class AddUserComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<AddUserComponent>,
               @Inject(MAT_DIALOG_DATA) private data: any,
-              private _user: UserService) { }
+              private _user: UserService,
+              private _dialog: DialogService) { }
 
   ngOnInit() {
   }
@@ -32,7 +34,7 @@ export class AddUserComponent implements OnInit {
   }
 
   stopAdd(): void {
-    this._user.dialogAdd(this.user);
+    this._dialog.dialogAdd(this.user);
   }
 
 }

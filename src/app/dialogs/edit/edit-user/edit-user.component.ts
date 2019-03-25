@@ -4,6 +4,7 @@ import {User} from "../../../model/User";
 import {UserService} from "../../../services/user.service";
 import {FormControl, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
+import {DialogService} from "../../../services/dialog.service";
 
 @Component({
   selector: 'app-edit-user',
@@ -30,7 +31,7 @@ export class EditUserComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<EditUserComponent>,
               @Inject(MAT_DIALOG_DATA) private data: any,
               private _user: UserService,
-              private toastr: ToastrService) { }
+              private _dialog: DialogService) { }
 
   ngOnInit() {
     this.getSingle();
@@ -50,6 +51,6 @@ export class EditUserComponent implements OnInit {
 
   stopEdit(): void {
     this.user.id = this.data.id;
-    this._user.dialogUpdate(this.user);
+    this._dialog.dialogUpdate(this.user);
   }
 }

@@ -8,6 +8,7 @@ import {EditUserComponent} from "../../dialogs/edit/edit-user/edit-user.componen
 import {AddUserComponent} from "../../dialogs/add/add-user/add-user.component";
 import {pipe} from "rxjs";
 import {map} from "rxjs/operators";
+import {DialogService} from "../../services/dialog.service";
 
 @Component({
   selector: 'app-user',
@@ -22,6 +23,7 @@ export class UserComponent implements OnInit {
   dataSource = new MatTableDataSource<User>();
 
   constructor(private _user: UserService,
+              private _dialog: DialogService,
               private router: Router,
               private toastr: ToastrService,
               private dialog: MatDialog) {
@@ -54,7 +56,7 @@ export class UserComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(res => {
       if(res === 1) {
-        this._user.add(this._user.dialogData).subscribe(
+        this._user.add(this._dialog.dialogData).subscribe(
           (res: User) => {
             this.dataSource.data.push(res);
             this.dataSource = new MatTableDataSource<User>(this.dataSource.data);
@@ -74,7 +76,7 @@ export class UserComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(res => {
       if(res === 1) {
-        this._user.update(this._user.dialogData.id, this._user.dialogData).subscribe((res: User) => {
+        this._user.update(this._dialog.dialogData.id, this._dialog.dialogData).subscribe((res: User) => {
             this.toastr.success('Update success', 'Success');
 
             const foundIndex = this.dataSource.data.findIndex(x => x.id === res.id);
