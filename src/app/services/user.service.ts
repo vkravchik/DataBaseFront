@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import {User} from "../model/User";
-import {HttpClient, HttpHeaders, HttpRequest} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ErrorService} from "./error.service";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {catchError, map} from "rxjs/operators";
-import {RequestOptions, Headers} from "@angular/http";
 
 @Injectable({
   providedIn: 'root'
@@ -85,11 +84,11 @@ export class UserService {
     )
   }
 
-  // dialogUpdate(user: any): void {
-  //   this.dialogData = user;
-  // }
-  //
-  // dialogAdd(user: any): void {
-  //   this.dialogData = user;
-  // }
+  getStorageInfo() {
+    return localStorage.getItem('login');
+  }
+
+  setStorageInfo() {
+    localStorage.setItem('login', '');
+  }
 }

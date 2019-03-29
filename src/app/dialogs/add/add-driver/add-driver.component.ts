@@ -6,6 +6,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MarkaService} from "../../../services/marka.service";
 import {CategoryService} from "../../../services/category.service";
 import {AutoCategory} from "../../../model/AutoCategory";
+import {AutoService} from "../../../services/auto.service";
+import {Auto} from "../../../model/Auto";
 
 @Component({
   selector: 'app-add-driver',
@@ -16,22 +18,19 @@ export class AddDriverComponent implements OnInit {
 
   form: FormGroup;
   marka: AutoMarka[];
+  auto: Auto[];
   category: AutoCategory[];
 
   constructor(private _marka: MarkaService,
               private _category: CategoryService,
               private _dialog: DialogService,
+              private _auto: AutoService,
               private formBuilder: FormBuilder,
               private dialogRef: MatDialogRef<AddDriverComponent>,
               @Inject(MAT_DIALOG_DATA) private data: any) {
-
-    this._marka.getAll().subscribe(res => {
-      this.marka = res;
-    });
-
-    this._category.getAll().subscribe(res => {
-      this.category = res;
-    });
+    this._auto.getAll().subscribe(res => {
+      this.auto = res;
+    })
   }
 
   ngOnInit() {
@@ -41,11 +40,11 @@ export class AddDriverComponent implements OnInit {
       surname: ['', Validators.required],
       auto: {
         id: null,
-        id_category: {
+        autoCategory: {
           id: null,
           name: null,
         },
-        id_marka: {
+        autoMarka: {
           id: null,
           name: null,
         }
@@ -58,20 +57,17 @@ export class AddDriverComponent implements OnInit {
   }
 
   stopAdd(): void {
-    console.log(this.form.value);
     this._dialog.dialogAdd(this.form.value);
   }
+  selectedAuto(event) {
+    this._auto.getSingle(event).subscribe(res => {
+      this.form.getRawValue().auto.id = res.id;
 
-  selectedCategory(event) {
-    this._category.getSingle(event).subscribe(res => {
-      this.form.getRawValue().auto.id_category.id = res.id;
-      this.form.getRawValue().auto.id_category.name = res.name;
-    });
-  }
-  selectedMarka(event) {
-    this._marka.getSingle(event).subscribe(res => {
-      this.form.getRawValue().auto.id_marka.id = res.id;
-      this.form.getRawValue().auto.id_marka.name = res.name;
+      this.form.getRawValue().auto.autoCategory.id = res.autoCategory.id;
+      this.form.getRawValue().auto.autoCategory.name = res.autoCategory.name;
+
+      this.form.getRawValue().auto.autoMarka.id = res.autoMarka.id;
+      this.form.getRawValue().auto.autoMarka.name = res.autoMarka.name;
     });
   }
 }

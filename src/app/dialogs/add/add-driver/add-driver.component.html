@@ -16,18 +16,9 @@
         &nbsp;
         <mat-form-field>
           <mat-label>Category</mat-label>
-          <mat-select (selectionChange)="selectedCategory($event.value)">
-            <mat-option *ngFor="let item of category" [value]="item.id">
-              {{item.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        &nbsp;
-        <mat-form-field>
-          <mat-label>Marka</mat-label>
-          <mat-select (selectionChange)="selectedMarka($event.value)">
-            <mat-option *ngFor="let item of marka" [value]="item.id">
-              {{item.name}}
+          <mat-select (selectionChange)="selectedAuto($event.value)">
+            <mat-option *ngFor="let item of auto" [value]="item.id">
+              {{item.autoCategory.name}} - {{item.autoMarka.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>

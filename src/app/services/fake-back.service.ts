@@ -80,10 +80,10 @@ export class FakeBackService {
     this.initCategory();
     this.initMarka();
     this.auto = [
-      {id: 1, id_category: this.autoCategory[0], id_marka: this.autoMarka[0]},
-      {id: 2, id_category: this.autoCategory[1], id_marka: this.autoMarka[1]},
-      {id: 3, id_category: this.autoCategory[2], id_marka: this.autoMarka[2]},
-      {id: 4, id_category: this.autoCategory[3], id_marka: this.autoMarka[3]},
+      {id: 1, autoCategory: this.autoCategory[0], autoMarka: this.autoMarka[0]},
+      {id: 2, autoCategory: this.autoCategory[1], autoMarka: this.autoMarka[1]},
+      {id: 3, autoCategory: this.autoCategory[2], autoMarka: this.autoMarka[2]},
+      {id: 4, autoCategory: this.autoCategory[3], autoMarka: this.autoMarka[3]},
     ];
   }
 
@@ -154,7 +154,7 @@ export class FakeBackService {
 
   private initHardRoute() {
     this.autoHardRoute = [
-      {id: 1, point_start: 'Комарова 2А', point_finish: 'Епіуентр К', date_start: new Date(), date_finish: new Date(), auto: {id: 1, id_category: {id: 4, name: 'Таксі'}, id_marka: {id: 4, name: 'Lexus'}}},
+      {id: 1, point_start: 'Комарова 2А', point_finish: 'Епіуентр К', date_start: new Date(), date_finish: new Date(), auto: {id: 1, autoCategory: {id: 4, name: 'Таксі'}, autoMarka: {id: 4, name: 'Lexus'}}},
     ];
   }
 

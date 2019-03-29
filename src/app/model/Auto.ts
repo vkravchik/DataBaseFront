@@ -3,6 +3,6 @@ import {AutoMarka} from './AutoMarka';
 
 export class Auto {
   id: number;
-  id_category: AutoCategory;
-  id_marka: AutoMarka;
+  autoCategory: AutoCategory;
+  autoMarka: AutoMarka;
 }

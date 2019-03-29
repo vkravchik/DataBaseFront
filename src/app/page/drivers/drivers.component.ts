@@ -1,15 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AutoCategoryPersonal} from "../../model/AutoCategoryPersonal";
-import {FakeBackService} from "../../services/fake-back.service";
 import {MatDialog, MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
-import {User} from "../../model/User";
 import {Driver} from "../../model/Driver";
 import {DriverService} from "../../services/driver.service";
-import {UserService} from "../../services/user.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {AddUserComponent} from "../../dialogs/add/add-user/add-user.component";
-import {EditUserComponent} from "../../dialogs/edit/edit-user/edit-user.component";
 import {DialogService} from "../../services/dialog.service";
 import {EditDriverComponent} from "../../dialogs/edit/edit-driver/edit-driver.component";
 import {AddDriverComponent} from "../../dialogs/add/add-driver/add-driver.component";

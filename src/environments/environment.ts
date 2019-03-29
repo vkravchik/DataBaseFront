@@ -9,6 +9,7 @@ export const environment = {
   apiDriver: '/drivers',
   apiCategory: '/category',
   apiMarka: '/marka',
+  apiAuto: '/auto',
 };
 
 /*
