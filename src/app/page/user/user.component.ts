@@ -43,7 +43,6 @@ export class UserComponent implements OnInit {
   }
 
 
-
   // ANOTHER FUNCTION
   tableClick(id) {
     this._user.getSingle(id).subscribe((res: User) => {
@@ -55,7 +54,7 @@ export class UserComponent implements OnInit {
     const dialogRef = this.dialog.open(AddUserComponent);
 
     dialogRef.afterClosed().subscribe(res => {
-      if(res === 1) {
+      if (res === 1) {
         this._user.add(this._dialog.dialogData).subscribe(
           (res: User) => {
             this.dataSource.data.push(res);
@@ -75,7 +74,7 @@ export class UserComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(res => {
-      if(res === 1) {
+      if (res === 1) {
         this._user.update(this._dialog.dialogData.id, this._dialog.dialogData).subscribe((res: User) => {
             this.toastr.success('Update success', 'Success');
 
@@ -85,7 +84,8 @@ export class UserComponent implements OnInit {
             this.dataSource = new MatTableDataSource<User>(this.dataSource.data)
 
           },
-          (error) => {this.toastr.error('Updating Error', 'Error')
+          (error) => {
+            this.toastr.error('Updating Error', 'Error')
           });
       }
     })

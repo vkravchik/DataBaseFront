@@ -17,13 +17,9 @@ import {Auto} from "../../../model/Auto";
 export class AddDriverComponent implements OnInit {
 
   form: FormGroup;
-  marka: AutoMarka[];
   auto: Auto[];
-  category: AutoCategory[];
 
-  constructor(private _marka: MarkaService,
-              private _category: CategoryService,
-              private _dialog: DialogService,
+  constructor(private _dialog: DialogService,
               private _auto: AutoService,
               private formBuilder: FormBuilder,
               private dialogRef: MatDialogRef<AddDriverComponent>,
