@@ -41,6 +41,7 @@ import { AddUserComponent } from './dialogs/add/add-user/add-user.component';
 import { AddDriverComponent } from './dialogs/add/add-driver/add-driver.component';
 import { DeleteDriverComponent } from './dialogs/delete/delete-driver/delete-driver.component';
 import { EditDriverComponent } from './dialogs/edit/edit-driver/edit-driver.component';
+import { AddCategoryComponent } from './dialogs/add/add-category/add-category.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -92,6 +93,7 @@ const appRoutes: Routes = [
     AddDriverComponent,
     DeleteDriverComponent,
     EditDriverComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,6 +125,7 @@ const appRoutes: Routes = [
     // ADD
     AddUserComponent,
     AddDriverComponent,
+    AddCategoryComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,

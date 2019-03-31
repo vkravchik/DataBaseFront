@@ -21,7 +21,7 @@
       </mat-header-cell>
 
       <mat-cell *matCellDef="let row; let i=index;">
-        <button mat-icon-button color="primary" (click)="startEdit(row, i)">
+        <button mat-icon-button color="primary" (click)="startEdit(row.id)">
           <mat-icon aria-label="Edit">edit</mat-icon>
         </button>
 
