@@ -24,4 +24,7 @@
 :host >>> .mat-header-cell {
   justify-content: flex-end;
 }
+.hideItem {
+  display: none !important;
+}
 

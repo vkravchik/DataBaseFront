@@ -1,14 +1,9 @@
-import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import {FakeBackService} from "../../services/fake-back.service";
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {EditCategoryComponent} from "../../dialogs/edit/edit-category/edit-category.component";
-import {MatDialog, MatDialogModule, MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
-import {DriverService} from "../../services/driver.service";
+import {MatDialog, MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 import {DialogService} from "../../services/dialog.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {Driver} from "../../model/Driver";
-import {AddDriverComponent} from "../../dialogs/add/add-driver/add-driver.component";
-import {EditDriverComponent} from "../../dialogs/edit/edit-driver/edit-driver.component";
 import {CategoryService} from "../../services/category.service";
 import {AddCategoryComponent} from "../../dialogs/add/add-category/add-category.component";
 import {AutoCategory} from "../../model/AutoCategory";

@@ -1,0 +1,17 @@
+<div class="modal">
+  <form class="form" (ngSubmit)="submit" #formControl="ngForm" [formGroup]="form">
+    <div class="form">
+      <mat-form-field class="example-full-width">
+        <input matInput
+               formControlName="name"
+               placeholder="Name">
+      </mat-form-field>
+
+      <div class="button">
+        <button mat-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Save</button>
+        <button mat-button color="warn" (click)="onNoClick()" tabindex="-1">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+

@@ -4,15 +4,16 @@ import {DialogService} from "../../../services/dialog.service";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 
 @Component({
-  selector: 'app-add-category',
-  templateUrl: './add-category.component.html',
-  styleUrls: ['./add-category.component.css']
+  selector: 'app-add-marka',
+  templateUrl: './add-marka.component.html',
+  styleUrls: ['./add-marka.component.css']
 })
-export class AddCategoryComponent implements OnInit {
+export class AddMarkaComponent implements OnInit {
+
   form: FormGroup;
 
   constructor(private _dialog: DialogService,
-              private formBuilder: FormBuilder, private dialogRef: MatDialogRef<AddCategoryComponent>,
+              private formBuilder: FormBuilder, private dialogRef: MatDialogRef<AddMarkaComponent>,
               @Inject(MAT_DIALOG_DATA) private data: any) {  }
 
   ngOnInit() {

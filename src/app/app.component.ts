@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "./services/user.service";
 
 @Component({
@@ -9,8 +8,23 @@ import {UserService} from "./services/user.service";
 })
 export class AppComponent {
   user: string;
+
+  items = [
+    {title: 'Car Type', path: '/category', rols: ['admin', 'manager']},
+    {title: 'Car Model', path: '/marka', rols: ['admin', 'manager']},
+    {title: 'Users', path: '/user', rols: ['admin']},
+    {title: 'Drivers', path: '/drivers', rols: ['admin', 'driver']},
+    ];
+
   constructor(private _user: UserService) {
-    this.user = this._user.getStorageInfo();
+
+  }
+
+  whoIs(rols) {
+    let user = this._user.getStorageInfo();
+    let roles = rols.concat(' ');
+    console.log(user);
+    return !roles.includes(user);
   }
 }
 

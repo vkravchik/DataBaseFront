@@ -18,7 +18,6 @@ import {RouterModule, Routes} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from "ngx-toastr";
 import { EditUserComponent } from './dialogs/edit/edit-user/edit-user.component';
-import { DeleteUserComponent } from './dialogs/delete/delete-user/delete-user.component';
 import { AutoComponent } from './page/auto/auto.component';
 import { BrigadaComponent } from './page/brigada/brigada.component';
 import { BrigadirComponent } from './page/brigadir/brigadir.component';
@@ -39,9 +38,10 @@ import { StreetComponent } from './page/street/street.component';
 import { EditCategoryComponent } from './dialogs/edit/edit-category/edit-category.component';
 import { AddUserComponent } from './dialogs/add/add-user/add-user.component';
 import { AddDriverComponent } from './dialogs/add/add-driver/add-driver.component';
-import { DeleteDriverComponent } from './dialogs/delete/delete-driver/delete-driver.component';
 import { EditDriverComponent } from './dialogs/edit/edit-driver/edit-driver.component';
 import { AddCategoryComponent } from './dialogs/add/add-category/add-category.component';
+import { AddMarkaComponent } from './dialogs/add/add-marka/add-marka.component';
+import { EditMarkaComponent } from './dialogs/edit/edit-marka/edit-marka.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -70,7 +70,6 @@ const appRoutes: Routes = [
     AppComponent,
     UserComponent,
     EditUserComponent,
-    DeleteUserComponent,
     AutoComponent,
     BrigadaComponent,
     BrigadirComponent,
@@ -91,9 +90,10 @@ const appRoutes: Routes = [
     EditCategoryComponent,
     AddUserComponent,
     AddDriverComponent,
-    DeleteDriverComponent,
     EditDriverComponent,
     AddCategoryComponent,
+    AddMarkaComponent,
+    EditMarkaComponent,
   ],
   imports: [
     BrowserModule,
@@ -126,13 +126,13 @@ const appRoutes: Routes = [
     AddUserComponent,
     AddDriverComponent,
     AddCategoryComponent,
+    AddMarkaComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
     EditUserComponent,
+    EditMarkaComponent,
     // DELETE
-    DeleteUserComponent,
-    DeleteDriverComponent,
   ],
   bootstrap: [AppComponent]
 })
