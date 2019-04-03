@@ -1,13 +1,4 @@
-<mat-toolbar color="primary">
-  <span>Auto Table</span>
-  <span class="spacer"></span>
-  Reload data:
-  <button mat-icon-button (click)="refresh()">
-    <mat-icon>refresh</mat-icon>
-  </button>
-</mat-toolbar>
-
-<table mat-table #table [dataSource]="autos" class="mat-elevation-z8">
+<table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> No. </th>

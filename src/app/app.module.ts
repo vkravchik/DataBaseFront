@@ -42,6 +42,8 @@ import { EditDriverComponent } from './dialogs/edit/edit-driver/edit-driver.comp
 import { AddCategoryComponent } from './dialogs/add/add-category/add-category.component';
 import { AddMarkaComponent } from './dialogs/add/add-marka/add-marka.component';
 import { EditMarkaComponent } from './dialogs/edit/edit-marka/edit-marka.component';
+import { AddAutoComponent } from './dialogs/add/add-auto/add-auto.component';
+import { EditAutoComponent } from './dialogs/edit/edit-auto/edit-auto.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -94,6 +96,8 @@ const appRoutes: Routes = [
     AddCategoryComponent,
     AddMarkaComponent,
     EditMarkaComponent,
+    AddAutoComponent,
+    EditAutoComponent,
   ],
   imports: [
     BrowserModule,
@@ -127,11 +131,13 @@ const appRoutes: Routes = [
     AddDriverComponent,
     AddCategoryComponent,
     AddMarkaComponent,
+    AddAutoComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
     EditUserComponent,
     EditMarkaComponent,
+    EditAutoComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]
