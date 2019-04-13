@@ -91,4 +91,13 @@ export class DriversComponent implements OnInit {
     )
   }
 
+  whoIs() {
+    const localLogin = localStorage.getItem('login');
+    if(localLogin === 'driver') {
+      return true;
+    }
+    return false;
+
+  }
+
 }

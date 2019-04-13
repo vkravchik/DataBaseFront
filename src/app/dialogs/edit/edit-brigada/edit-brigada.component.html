@@ -1,5 +1,5 @@
 <div class="modal">
-  <mat-grid-list cols="2" rowHeight="100px">
+  <mat-grid-list cols="2" rowHeight="fit">
     <form class="form" #formControl="ngForm" [formGroup]="form">
 
       <mat-grid-tile>
@@ -11,30 +11,11 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field class="example-full-width">
-          <input matInput
-                 formControlName="surname"
-                 placeholder="SurName">
-        </mat-form-field>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>Category</mat-label>
-          <mat-select (selectionChange)="selectedAuto($event.value)">
-            <mat-option *ngFor="let item of auto" [value]="item.id">
-              {{item.autoCategory.name}} - {{item.autoMarka.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
         <button mat-button
                 color="primary"
                 [disabled]="!formControl.valid"
                 [mat-dialog-close]="1"
-                (click)="stopAdd()">
+                (click)="stopEdit()">
           Save
         </button>
         <button mat-button

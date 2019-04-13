@@ -20,6 +20,8 @@ export class EditDriverComponent implements OnInit {
   auto: Auto[];
   selectAuto: Auto;
 
+  flag = false;
+
   constructor(private _dialog: DialogService,
               private _auto: AutoService,
               private _driver: DriverService,
@@ -50,9 +52,9 @@ export class EditDriverComponent implements OnInit {
     this._auto.getAll().subscribe(res => {
       this.auto = res;
       if(this.auto) {
-        const toSelect = this.auto.find(r => r.id == this.currentDriver.auto.id);
+        this.selectAuto = this.auto.find(r => r.id == this.currentDriver.auto.id);
         this.form.patchValue({
-          auto: toSelect.id,
+          auto: this.selectAuto.id,
         })
       }
     });
@@ -82,7 +84,6 @@ export class EditDriverComponent implements OnInit {
   getSingle() {
     this._driver.getSingle(this.data.id).subscribe((res: AutoDrivers) => {
       this.currentDriver = res;
-
       this.form.patchValue({
         name: res.name,
         surname: res.surname,

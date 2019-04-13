@@ -10,6 +10,8 @@ export const environment = {
   apiCategory: '/category',
   apiMarka: '/marka',
   apiAuto: '/auto',
+  apiBrigada: '/brigada',
+  apiBrigadir: '/brigadir',
 };
 
 /*

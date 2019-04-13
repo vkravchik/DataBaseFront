@@ -15,6 +15,8 @@ export class AppComponent {
     {title: 'Users', path: '/user', rols: ['admin']},
     {title: 'Drivers', path: '/drivers', rols: ['admin', 'driver']},
     {title: 'Autos', path: '/auto', rols: ['admin', 'driver']},
+
+    {title: 'Brigade', path: '/brigada', rols: ['admin', 'driver']},
     ];
 
   constructor(private _user: UserService) {
@@ -24,7 +26,6 @@ export class AppComponent {
   whoIs(rols) {
     // let user = this._user.getStorageInfo();
     // let roles = rols.concat(' ');
-    // console.log(user);
     // return !roles.includes(user);
   }
 }

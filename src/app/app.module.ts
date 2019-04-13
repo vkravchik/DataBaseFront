@@ -6,7 +6,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule, MatDialogModule,
-  MatFormFieldModule,
+  MatFormFieldModule, MatGridListModule,
   MatIconModule,
   MatInputModule, MatListModule, MatPaginatorModule,
   MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSortModule,
@@ -44,6 +44,8 @@ import { AddMarkaComponent } from './dialogs/add/add-marka/add-marka.component';
 import { EditMarkaComponent } from './dialogs/edit/edit-marka/edit-marka.component';
 import { AddAutoComponent } from './dialogs/add/add-auto/add-auto.component';
 import { EditAutoComponent } from './dialogs/edit/edit-auto/edit-auto.component';
+import { AddBrigadaComponent } from './dialogs/add/add-brigada/add-brigada.component';
+import { EditBrigadaComponent } from './dialogs/edit/edit-brigada/edit-brigada.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -98,6 +100,8 @@ const appRoutes: Routes = [
     EditMarkaComponent,
     AddAutoComponent,
     EditAutoComponent,
+    AddBrigadaComponent,
+    EditBrigadaComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,6 +116,7 @@ const appRoutes: Routes = [
 
     //  MATERIAL
     MatButtonModule,
+    MatGridListModule,
     MatTableModule,
     MatDialogModule,
     MatIconModule,
@@ -132,12 +137,14 @@ const appRoutes: Routes = [
     AddCategoryComponent,
     AddMarkaComponent,
     AddAutoComponent,
+    AddBrigadaComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
     EditUserComponent,
     EditMarkaComponent,
     EditAutoComponent,
+    EditBrigadaComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]
