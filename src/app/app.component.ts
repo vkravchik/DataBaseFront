@@ -10,9 +10,12 @@ export class AppComponent {
   user: string;
 
   items = [
+    {title: 'Users', path: '/user', rols: ['admin']},
+
+
     {title: 'Car Type', path: '/category', rols: ['admin', 'manager']},
     {title: 'Car Model', path: '/marka', rols: ['admin', 'manager']},
-    {title: 'Users', path: '/user', rols: ['admin']},
+
     {title: 'Drivers', path: '/drivers', rols: ['admin', 'driver']},
     {title: 'Autos', path: '/auto', rols: ['admin', 'driver']},
 

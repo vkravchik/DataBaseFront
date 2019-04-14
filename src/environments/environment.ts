@@ -12,6 +12,7 @@ export const environment = {
   apiAuto: '/auto',
   apiBrigada: '/brigada',
   apiBrigadir: '/brigadir',
+  apiCategoryPersonal: '/categoryPersonal',
 };
 
 /*
