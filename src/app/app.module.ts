@@ -9,7 +9,7 @@ import {
   MatFormFieldModule, MatGridListModule,
   MatIconModule,
   MatInputModule, MatListModule, MatPaginatorModule,
-  MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSortModule,
+  MatSelectModule, MatSidenavModule, MatSortModule,
   MatTableModule, MatToolbarModule
 } from "@angular/material";
 import {CdkTableModule} from "@angular/cdk/table";
@@ -46,6 +46,8 @@ import { AddAutoComponent } from './dialogs/add/add-auto/add-auto.component';
 import { EditAutoComponent } from './dialogs/edit/edit-auto/edit-auto.component';
 import { AddBrigadaComponent } from './dialogs/add/add-brigada/add-brigada.component';
 import { EditBrigadaComponent } from './dialogs/edit/edit-brigada/edit-brigada.component';
+import { AddBrigadirComponent } from './dialogs/add/add-brigadir/add-brigadir.component';
+import { EditBrigadirComponent } from './dialogs/edit/edit-brigadir/edit-brigadir.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -102,6 +104,8 @@ const appRoutes: Routes = [
     EditAutoComponent,
     AddBrigadaComponent,
     EditBrigadaComponent,
+    AddBrigadirComponent,
+    EditBrigadirComponent,
   ],
   imports: [
     BrowserModule,
@@ -138,6 +142,7 @@ const appRoutes: Routes = [
     AddMarkaComponent,
     AddAutoComponent,
     AddBrigadaComponent,
+    AddBrigadirComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
@@ -145,6 +150,7 @@ const appRoutes: Routes = [
     EditMarkaComponent,
     EditAutoComponent,
     EditBrigadaComponent,
+    EditBrigadirComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]

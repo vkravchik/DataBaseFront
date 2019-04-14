@@ -16,7 +16,8 @@ export class AppComponent {
     {title: 'Drivers', path: '/drivers', rols: ['admin', 'driver']},
     {title: 'Autos', path: '/auto', rols: ['admin', 'driver']},
 
-    {title: 'Brigade', path: '/brigada', rols: ['admin', 'driver']},
+    {title: 'Brigade', path: '/brigada', rols: ['admin', 'brigadir']},
+    {title: 'Brigadier', path: '/brigadir', rols: ['admin', 'brigadir']},
     ];
 
   constructor(private _user: UserService) {
