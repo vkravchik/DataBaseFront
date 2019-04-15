@@ -20,7 +20,7 @@
 
       <mat-grid-tile>
         <mat-form-field>
-          <mat-label>Category</mat-label>
+          <mat-label>Auto</mat-label>
           <mat-select (selectionChange)="selectedAuto($event.value)">
             <mat-option *ngFor="let item of auto" [value]="item.id">
               {{item.autoCategory.name}} - {{item.autoMarka.name}}

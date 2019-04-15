@@ -13,6 +13,7 @@ export const environment = {
   apiBrigada: '/brigada',
   apiBrigadir: '/brigadir',
   apiCategoryPersonal: '/categoryPersonal',
+  apiSaleBuy: '/saleBuy',
 };
 
 /*

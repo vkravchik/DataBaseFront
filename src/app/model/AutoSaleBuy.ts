@@ -1,5 +1,5 @@
-import {AutoProblem} from "./AutoProblem";
 import {Auto} from "./Auto";
+import DateTimeFormat = Intl.DateTimeFormat;
 
 export class AutoSaleBuy {
   id: number;

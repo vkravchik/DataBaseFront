@@ -21,6 +21,9 @@ export class AppComponent {
 
     {title: 'Brigade', path: '/brigada', rols: ['admin', 'brigadir']},
     {title: 'Brigadier', path: '/brigadir', rols: ['admin', 'brigadir']},
+
+    {title: 'Personal Type', path: '/categoryPersonal', rols: ['admin', 'brigadir']},
+    {title: 'Sale/Buy', path: '/saleBuy', rols: ['admin', 'brigadir']},
     ];
 
   constructor(private _user: UserService) {

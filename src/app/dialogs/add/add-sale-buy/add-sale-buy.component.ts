@@ -1,24 +1,25 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
-import {DialogService} from "../../../services/dialog.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {DialogService} from "../../../services/dialog.service";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {AutoService} from "../../../services/auto.service";
 import {Auto} from "../../../model/Auto";
 
 @Component({
-  selector: 'app-add-driver',
-  templateUrl: './add-driver.component.html',
-  styleUrls: ['./add-driver.component.css']
+  selector: 'app-add-sale-buy',
+  templateUrl: './add-sale-buy.component.html',
+  styleUrls: ['./add-sale-buy.component.css']
 })
-export class AddDriverComponent implements OnInit {
+export class AddSaleBuyComponent implements OnInit {
 
   form: FormGroup;
   auto: Auto[];
+  toggle: boolean;
 
   constructor(private _dialog: DialogService,
               private _auto: AutoService,
               private formBuilder: FormBuilder,
-              private dialogRef: MatDialogRef<AddDriverComponent>,
+              private dialogRef: MatDialogRef<AddSaleBuyComponent>,
               @Inject(MAT_DIALOG_DATA) private data: any) {
     this._auto.getAll().subscribe(res => {
       this.auto = res;
@@ -28,9 +29,7 @@ export class AddDriverComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       id: null,
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
-      auto: {
+      auto: [{
         id: null,
         autoCategory: {
           id: null,
@@ -40,7 +39,10 @@ export class AddDriverComponent implements OnInit {
           id: null,
           name: null,
         }
-      },
+      }, Validators.required],
+      date: null,
+      sale_buy: null,
+      price: null,
     });
   }
 
@@ -51,6 +53,7 @@ export class AddDriverComponent implements OnInit {
   stopAdd(): void {
     this._dialog.dialogAdd(this.form.value);
   }
+
   selectedAuto(event) {
     this._auto.getSingle(event).subscribe(res => {
       this.form.getRawValue().auto.id = res.id;
@@ -61,5 +64,9 @@ export class AddDriverComponent implements OnInit {
       this.form.getRawValue().auto.autoMarka.id = res.autoMarka.id;
       this.form.getRawValue().auto.autoMarka.name = res.autoMarka.name;
     });
+  }
+
+  toggleButton() {
+    this.toggle = !this.toggle;
   }
 }

@@ -6,15 +6,18 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
   MatDialogModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatNativeDateModule,
   MatPaginatorModule,
   MatSelectModule,
-  MatSidenavModule,
+  MatSidenavModule, MatSlideToggleModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule
@@ -55,8 +58,11 @@ import {AddBrigadaComponent} from './dialogs/add/add-brigada/add-brigada.compone
 import {EditBrigadaComponent} from './dialogs/edit/edit-brigada/edit-brigada.component';
 import {AddBrigadirComponent} from './dialogs/add/add-brigadir/add-brigadir.component';
 import {EditBrigadirComponent} from './dialogs/edit/edit-brigadir/edit-brigadir.component';
-import { AddCategoryPersonalComponent } from './dialogs/add/add-category-personal/add-category-personal.component';
-import { EditCategoryPersonalComponent } from './dialogs/edit/edit-category-personal/edit-category-personal.component';
+import {AddCategoryPersonalComponent} from './dialogs/add/add-category-personal/add-category-personal.component';
+import {EditCategoryPersonalComponent} from './dialogs/edit/edit-category-personal/edit-category-personal.component';
+import {AddSaleBuyComponent} from './dialogs/add/add-sale-buy/add-sale-buy.component';
+import {EditSaleBuyComponent} from './dialogs/edit/edit-sale-buy/edit-sale-buy.component';
+import {DatePipe} from "@angular/common";
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -117,6 +123,8 @@ const appRoutes: Routes = [
     EditBrigadirComponent,
     AddCategoryPersonalComponent,
     EditCategoryPersonalComponent,
+    AddSaleBuyComponent,
+    EditSaleBuyComponent,
   ],
   imports: [
     BrowserModule,
@@ -133,6 +141,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatGridListModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatDialogModule,
     MatIconModule,
     MatToolbarModule,
@@ -141,10 +151,12 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSidenavModule,
     MatListModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
     MatSortModule,
     MatSelectModule,
   ],
-  providers: [],
+  providers: [MatDatepickerModule, DatePipe],
   entryComponents: [
     // ADD
     AddUserComponent,
@@ -155,6 +167,7 @@ const appRoutes: Routes = [
     AddBrigadaComponent,
     AddBrigadirComponent,
     AddCategoryPersonalComponent,
+    AddSaleBuyComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
@@ -164,6 +177,7 @@ const appRoutes: Routes = [
     EditBrigadaComponent,
     EditBrigadirComponent,
     EditCategoryPersonalComponent,
+    EditSaleBuyComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]
