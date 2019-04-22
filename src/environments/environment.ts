@@ -14,6 +14,7 @@ export const environment = {
   apiBrigadir: '/brigadir',
   apiCategoryPersonal: '/categoryPersonal',
   apiSaleBuy: '/saleBuy',
+  apiHarRoute: '/hardRoute',
 };
 
 /*

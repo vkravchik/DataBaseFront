@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {Auto} from "../../../model/Auto";
 import {DialogService} from "../../../services/dialog.service";
 import {AutoService} from "../../../services/auto.service";

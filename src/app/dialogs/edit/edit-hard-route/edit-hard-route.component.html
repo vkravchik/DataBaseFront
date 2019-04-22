@@ -1,0 +1,68 @@
+<div class="modal">
+  <mat-grid-list cols="1" rowHeight="60px">
+    <form class="form" #formControl="ngForm" [formGroup]="form">
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput
+                 type="text"
+                 formControlName="point_start"
+                 placeholder="Point of Start">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput
+                 type="text"
+                 formControlName="point_finish"
+                 placeholder="Point of Finish">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput [matDatepicker]="firstPicker" placeholder="Choose a start date" formControlName="date_start">
+          <mat-datepicker-toggle matSuffix [for]="firstPicker"></mat-datepicker-toggle>
+          <mat-datepicker #firstPicker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput [matDatepicker]="secondPicker" placeholder="Choose a finish date" formControlName="date_finish">
+          <mat-datepicker-toggle matSuffix [for]="secondPicker"></mat-datepicker-toggle>
+          <mat-datepicker #secondPicker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Auto</mat-label>
+          <mat-select (selectionChange)="selectedAuto($event.value)" formControlName="auto">
+            <mat-option *ngFor="let item of auto" [value]="item.id">
+              {{item.autoCategory.name}} - {{item.autoMarka.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-button
+                color="primary"
+                [disabled]="!formControl.valid"
+                [mat-dialog-close]="1"
+                (click)="stopEdit()">
+          Save
+        </button>
+        <button mat-button
+                color="warn"
+                (click)="onNoClick()"
+                tabindex="-1">
+          Cancel
+        </button>
+      </mat-grid-tile>
+
+    </form>
+  </mat-grid-list>
+</div>

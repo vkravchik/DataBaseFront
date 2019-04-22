@@ -63,6 +63,8 @@ import {EditCategoryPersonalComponent} from './dialogs/edit/edit-category-person
 import {AddSaleBuyComponent} from './dialogs/add/add-sale-buy/add-sale-buy.component';
 import {EditSaleBuyComponent} from './dialogs/edit/edit-sale-buy/edit-sale-buy.component';
 import {DatePipe} from "@angular/common";
+import { AddHarRouteComponent } from './dialogs/add/add-har-route/add-har-route.component';
+import { EditHardRouteComponent } from './dialogs/edit/edit-hard-route/edit-hard-route.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -125,6 +127,8 @@ const appRoutes: Routes = [
     EditCategoryPersonalComponent,
     AddSaleBuyComponent,
     EditSaleBuyComponent,
+    AddHarRouteComponent,
+    EditHardRouteComponent,
   ],
   imports: [
     BrowserModule,
@@ -168,6 +172,7 @@ const appRoutes: Routes = [
     AddBrigadirComponent,
     AddCategoryPersonalComponent,
     AddSaleBuyComponent,
+    AddHarRouteComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
@@ -178,6 +183,7 @@ const appRoutes: Routes = [
     EditBrigadirComponent,
     EditCategoryPersonalComponent,
     EditSaleBuyComponent,
+    EditHardRouteComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]

@@ -24,6 +24,8 @@ export class AppComponent {
 
     {title: 'Personal Type', path: '/categoryPersonal', rols: ['admin', 'brigadir']},
     {title: 'Sale/Buy', path: '/saleBuy', rols: ['admin', 'brigadir']},
+
+    {title: 'Hard Routes', path: '/hardRoute', rols: ['admin', 'brigadir']},
     ];
 
   constructor(private _user: UserService) {

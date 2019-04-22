@@ -2,7 +2,6 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {DialogService} from "../../../services/dialog.service";
-import {BrigadaService} from "../../../services/brigada.service";
 import {AutoCategoryPersonal} from "../../../model/AutoCategoryPersonal";
 import {CategoryPersonalService} from "../../../services/category-personal.service";
 
