@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FakeBackService} from "../../services/fake-back.service";
 import {AutoProp} from "../../model/AutoProp";
 
 @Component({
@@ -11,11 +10,9 @@ export class PropComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'Name', 'Category', 'actions'];
   prop: AutoProp[];
-  constructor(private back: FakeBackService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.prop = this.back.getProp();
-    console.log(this.prop);
   }
 
 }

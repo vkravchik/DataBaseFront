@@ -65,6 +65,8 @@ import {EditSaleBuyComponent} from './dialogs/edit/edit-sale-buy/edit-sale-buy.c
 import {DatePipe} from "@angular/common";
 import { AddHarRouteComponent } from './dialogs/add/add-har-route/add-har-route.component';
 import { EditHardRouteComponent } from './dialogs/edit/edit-hard-route/edit-hard-route.component';
+import { AddInfrastructComponent } from './dialogs/add/add-infrastruct/add-infrastruct.component';
+import { EditInfrastructComponent } from './dialogs/edit/edit-infrastruct/edit-infrastruct.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -129,6 +131,8 @@ const appRoutes: Routes = [
     EditSaleBuyComponent,
     AddHarRouteComponent,
     EditHardRouteComponent,
+    AddInfrastructComponent,
+    EditInfrastructComponent,
   ],
   imports: [
     BrowserModule,
@@ -173,6 +177,7 @@ const appRoutes: Routes = [
     AddCategoryPersonalComponent,
     AddSaleBuyComponent,
     AddHarRouteComponent,
+    AddInfrastructComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
@@ -184,6 +189,7 @@ const appRoutes: Routes = [
     EditCategoryPersonalComponent,
     EditSaleBuyComponent,
     EditHardRouteComponent,
+    EditInfrastructComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]

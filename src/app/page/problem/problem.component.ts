@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AutoMarka} from "../../model/AutoMarka";
-import {FakeBackService} from "../../services/fake-back.service";
 import {AutoProblem} from "../../model/AutoProblem";
 
 @Component({
@@ -12,11 +10,9 @@ export class ProblemComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'Name', 'actions'];
   problem: AutoProblem[];
-  constructor(private back: FakeBackService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.problem = this.back.getProblem();
-    console.log(this.problem);
   }
 
 }

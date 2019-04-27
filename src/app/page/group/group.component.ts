@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AutoCategoryPersonal} from "../../model/AutoCategoryPersonal";
-import {FakeBackService} from "../../services/fake-back.service";
 import {AutoGroup} from "../../model/AutoGroup";
 
 @Component({
@@ -12,11 +10,9 @@ export class GroupComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'PersonalName', 'DriversName', 'BrigadaName', 'BrigadirName', 'actions'];
   group: AutoGroup[];
-  constructor(private back: FakeBackService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.group = this.back.getGroup();
-    console.log(this.group);
   }
 
 }
