@@ -67,6 +67,8 @@ import { AddHarRouteComponent } from './dialogs/add/add-har-route/add-har-route.
 import { EditHardRouteComponent } from './dialogs/edit/edit-hard-route/edit-hard-route.component';
 import { AddInfrastructComponent } from './dialogs/add/add-infrastruct/add-infrastruct.component';
 import { EditInfrastructComponent } from './dialogs/edit/edit-infrastruct/edit-infrastruct.component';
+import { AddPersonalComponent } from './dialogs/add/add-personal/add-personal.component';
+import { EditPersonalComponent } from './dialogs/edit/edit-personal/edit-personal.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -133,6 +135,8 @@ const appRoutes: Routes = [
     EditHardRouteComponent,
     AddInfrastructComponent,
     EditInfrastructComponent,
+    AddPersonalComponent,
+    EditPersonalComponent,
   ],
   imports: [
     BrowserModule,
@@ -178,6 +182,7 @@ const appRoutes: Routes = [
     AddSaleBuyComponent,
     AddHarRouteComponent,
     AddInfrastructComponent,
+    AddPersonalComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
@@ -190,6 +195,7 @@ const appRoutes: Routes = [
     EditSaleBuyComponent,
     EditHardRouteComponent,
     EditInfrastructComponent,
+    EditPersonalComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]

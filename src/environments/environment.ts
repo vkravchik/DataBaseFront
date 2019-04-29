@@ -16,6 +16,7 @@ export const environment = {
   apiSaleBuy: '/saleBuy',
   apiHarRoute: '/hardRoute',
   apiInfrastruct: '/infrastruct',
+  apiPersonal: '/personal',
 };
 
 /*

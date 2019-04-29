@@ -28,6 +28,7 @@ export class AppComponent {
     {title: 'Hard Routes', path: '/hardRoute', rols: ['admin', 'brigadir']},
 
     {title: 'Infrastructs', path: '/infrastruct', rols: ['admin', 'brigadir']},
+    {title: 'Personal', path: '/personal', rols: ['admin', 'brigadir']},
     ];
 
   constructor(private _user: UserService) {
