@@ -5,7 +5,6 @@ import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {catchError, map} from "rxjs/operators";
 import {AutoPersonal} from "../model/AutoPersonal";
-import {AutoInfrastruct} from "../model/AutoInfrastruct";
 
 @Injectable({
   providedIn: 'root'

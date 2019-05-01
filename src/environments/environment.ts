@@ -17,6 +17,8 @@ export const environment = {
   apiHarRoute: '/hardRoute',
   apiInfrastruct: '/infrastruct',
   apiPersonal: '/personal',
+  apiProblem: '/problem',
+  apiRepair: '/repair',
 };
 
 /*

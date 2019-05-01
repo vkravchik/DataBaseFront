@@ -1,13 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ErrorService} from "./error.service";
 import {Observable} from "rxjs";
-import {User} from "../model/User";
 import {environment} from "../../environments/environment";
 import {catchError, map} from "rxjs/operators";
 import {AutoCategory} from "../model/AutoCategory";
-import {AutoDrivers} from "../model/AutoDrivers";
-import {Driver} from "../model/Driver";
 
 @Injectable({
   providedIn: 'root'
