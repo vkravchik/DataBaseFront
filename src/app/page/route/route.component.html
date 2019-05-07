@@ -1,13 +1,4 @@
-<mat-toolbar color="primary">
-  <span>Route Table</span>
-  <span class="spacer"></span>
-  Reload data:
-  <button mat-icon-button (click)="refresh()">
-    <mat-icon>refresh</mat-icon>
-  </button>
-</mat-toolbar>
-
-<table mat-table #table [dataSource]="route" class="mat-elevation-z8">
+<table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -62,5 +53,11 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  <!--<tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="tableClick(row.id)"></tr>-->
 </table>
+
+<mat-paginator #paginator
+               [length]="dataSource.filteredData.length"
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

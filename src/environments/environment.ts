@@ -19,6 +19,9 @@ export const environment = {
   apiPersonal: '/personal',
   apiProblem: '/problem',
   apiRepair: '/repair',
+  apiGroup: '/group',
+  apiStreet: '/street',
+  apiRoute: '/route',
 };
 
 /*

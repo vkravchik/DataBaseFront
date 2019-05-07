@@ -1,0 +1,67 @@
+<div class="modal">
+  <mat-grid-list cols="1" rowHeight="60px">
+    <form class="form" #formControl="ngForm" [formGroup]="form">
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Personal</mat-label>
+          <mat-select (selectionChange)="selectedPersonal($event.value)" formControlName="autoPersonal">
+            <mat-option *ngFor="let item of personals" [value]="item.id">
+              {{item.name}} - {{item.surname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Driver</mat-label>
+          <mat-select (selectionChange)="selectedDriver($event.value)" formControlName="autoDrivers">
+            <mat-option *ngFor="let item of drivers" [value]="item.id">
+              {{item.name}} - {{item.surname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Brigada</mat-label>
+          <mat-select (selectionChange)="selectedBrigada($event.value)" formControlName="autoBrigada">
+            <mat-option *ngFor="let item of brigads" [value]="item.id">
+              {{item.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Brigadir</mat-label>
+          <mat-select (selectionChange)="selectedBrigadir($event.value)" formControlName="autoBrigadir">
+            <mat-option *ngFor="let item of brigadirs" [value]="item.id">
+              {{item.name}} - {{item.surname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-button
+                color="primary"
+                [disabled]="!formControl.valid"
+                [mat-dialog-close]="1"
+                (click)="stopEdit()">
+          Save
+        </button>
+        <button mat-button
+                color="warn"
+                (click)="onNoClick()"
+                tabindex="-1">
+          Cancel
+        </button>
+      </mat-grid-tile>
+
+    </form>
+  </mat-grid-list>
+</div>

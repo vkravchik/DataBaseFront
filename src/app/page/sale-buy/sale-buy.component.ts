@@ -9,8 +9,6 @@ import {AutoBrigada} from "../../model/AutoBrigada";
 import {AddSaleBuyComponent} from "../../dialogs/add/add-sale-buy/add-sale-buy.component";
 import {EditSaleBuyComponent} from "../../dialogs/edit/edit-sale-buy/edit-sale-buy.component";
 import {DatePipe} from "@angular/common";
-import {map} from "rxjs/operators";
-import {nextTick} from "q";
 
 @Component({
   selector: 'app-sale-buy',

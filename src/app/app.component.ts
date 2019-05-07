@@ -29,11 +29,17 @@ export class AppComponent {
 
     {title: 'Infrastructs', path: '/infrastruct', rols: ['admin', 'brigadir']},
 
-    {title: 'Personal', path: '/personal', rols: ['admin', 'brigadir']},
+    {title: 'Personals', path: '/personal', rols: ['admin', 'brigadir']},
 
-    {title: 'Problem', path: '/problem', rols: ['admin', 'brigadir']},
+    {title: 'Problems', path: '/problem', rols: ['admin', 'brigadir']},
 
-    {title: 'Repair', path: '/repair', rols: ['admin', 'brigadir']},
+    {title: 'Repairs', path: '/repair', rols: ['admin', 'brigadir']},
+
+    {title: 'Groups', path: '/group', rols: ['admin', 'brigadir']},
+
+    {title: 'Streets', path: '/street', rols: ['admin', 'brigadir']},
+
+    {title: 'Routes', path: '/route', rols: ['admin', 'brigadir']},
     ];
 
   constructor(private _user: UserService) {

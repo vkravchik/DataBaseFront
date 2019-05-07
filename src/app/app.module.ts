@@ -73,6 +73,12 @@ import { AddRepairComponent } from './dialogs/add/add-repair/add-repair.componen
 import { EditRepairComponent } from './dialogs/edit/edit-repair/edit-repair.component';
 import { EditProblemComponent } from './dialogs/edit/edit-problem/edit-problem.component';
 import { AddProblemComponent } from './dialogs/add/add-problem/add-problem.component';
+import { AddGroupComponent } from './dialogs/add/add-group/add-group.component';
+import { EditGroupComponent } from './dialogs/edit/edit-group/edit-group.component';
+import { EditStreetComponent } from './dialogs/edit/edit-street/edit-street.component';
+import { AddStreetComponent } from './dialogs/add/add-street/add-street.component';
+import { AddRouteComponent } from './dialogs/add/add-route/add-route.component';
+import {EditRouteComponent} from "./dialogs/edit/edit-route/edit-route.component";
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -145,6 +151,12 @@ const appRoutes: Routes = [
     EditRepairComponent,
     EditProblemComponent,
     AddProblemComponent,
+    AddGroupComponent,
+    EditGroupComponent,
+    EditStreetComponent,
+    AddStreetComponent,
+    AddRouteComponent,
+    EditRouteComponent,
   ],
   imports: [
     BrowserModule,
@@ -193,6 +205,9 @@ const appRoutes: Routes = [
     AddPersonalComponent,
     AddProblemComponent,
     AddRepairComponent,
+    AddGroupComponent,
+    AddStreetComponent,
+    AddRouteComponent,
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
@@ -208,6 +223,9 @@ const appRoutes: Routes = [
     EditPersonalComponent,
     EditProblemComponent,
     EditRepairComponent,
+    EditGroupComponent,
+    EditStreetComponent,
+    EditRouteComponent,
     // DELETE
   ],
   bootstrap: [AppComponent]

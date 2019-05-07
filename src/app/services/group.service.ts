@@ -4,26 +4,24 @@ import {ErrorService} from "./error.service";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {catchError, map} from "rxjs/operators";
-import {AutoRoute} from "../model/AutoRoute";
 import {AutoGroup} from "../model/AutoGroup";
-import {AutoStreet} from "../model/AutoStreet";
 
 @Injectable({
   providedIn: 'root'
 })
-export class RouteService {
+export class GroupService {
 
-  private rows: AutoRoute[];
-  private row: AutoRoute;
-  editedRow: AutoRoute;
-  newRow: AutoRoute;
+  private rows: AutoGroup[];
+  private row: AutoGroup;
+  editedRow: AutoGroup;
+  newRow: AutoGroup;
 
   constructor(private http: HttpClient,
               private _error: ErrorService) { }
 
-  getAll(): Observable<AutoRoute[]> {
-    return this.http.get(environment.apiUrl + environment.apiRoute + '/all').pipe(
-      map((res: AutoRoute[]) => {
+  getAll(): Observable<AutoGroup[]> {
+    return this.http.get(environment.apiUrl + environment.apiGroup + '/all').pipe(
+      map((res: AutoGroup[]) => {
         this.rows = res;
         return this.rows;
       }),
@@ -31,9 +29,9 @@ export class RouteService {
     );
   }
 
-  getSingle(id: number): Observable<AutoRoute> {
-    return this.http.get(environment.apiUrl + environment.apiRoute + '/' + id).pipe(
-      map((res: AutoRoute) => {
+  getSingle(id: number): Observable<AutoGroup> {
+    return this.http.get(environment.apiUrl + environment.apiGroup + '/' + id).pipe(
+      map((res: AutoGroup) => {
         this.row = res;
         return this.row;
       }),
@@ -41,15 +39,15 @@ export class RouteService {
     )
   }
 
-  update(id: number, item: any): Observable<AutoRoute> {
-    let url = environment.apiUrl + environment.apiRoute + '/' + id;
+  update(id: number, item: any): Observable<AutoGroup> {
+    let url = environment.apiUrl + environment.apiGroup + '/' + id;
 
     let body = JSON.stringify(item);
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.http.put(url, body, {headers: headers}).pipe(
-      map((res: AutoRoute) => {
+      map((res: AutoGroup) => {
         this.editedRow = res;
         return this.editedRow;
       }),
@@ -58,7 +56,7 @@ export class RouteService {
   }
 
   delete(id: number): Observable<any> {
-    let url = environment.apiUrl + environment.apiRoute + '/' + id;
+    let url = environment.apiUrl + environment.apiGroup + '/' + id;
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
@@ -70,8 +68,8 @@ export class RouteService {
     )
   }
 
-  add(item: any): Observable<AutoRoute> {
-    let url = environment.apiUrl + environment.apiRoute + '/add';
+  add(item: any): Observable<AutoGroup> {
+    let url = environment.apiUrl + environment.apiGroup + '/add';
 
     let body = JSON.stringify(item);
     console.log(body);
@@ -79,7 +77,7 @@ export class RouteService {
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.http.post(url, body, {headers: headers}).pipe(
-      map((res: AutoRoute) => {
+      map((res: AutoGroup) => {
         this.newRow = res;
         return res;
       }),
