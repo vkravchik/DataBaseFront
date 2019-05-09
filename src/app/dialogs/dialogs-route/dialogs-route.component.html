@@ -1,0 +1,54 @@
+<div class="modal">
+  <mat-grid-list cols="1" rowHeight="60px">
+    <form class="form" #formControl="ngForm" [formGroup]="form">
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Street</mat-label>
+          <mat-select (selectionChange)="selectedStreet($event.value)" formControlName="autoStreet">
+            <mat-option *ngFor="let item of street" [value]="item.id">
+              {{item.street_start}} - {{item.street_finish}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Auto</mat-label>
+          <mat-select (selectionChange)="selectedAuto($event.value)" formControlName="auto">
+            <mat-option *ngFor="let item of auto" [value]="item.id">
+              {{item.autoCategory.name}} - {{item.autoMarka.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 formControlName="passanger_count"
+                 placeholder="Number of passengers">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-button
+                color="primary"
+                [disabled]="!formControl.valid"
+                [mat-dialog-close]="1"
+                (click)="stop()">
+          Save
+        </button>
+        <button mat-button
+                color="warn"
+                (click)="onNoClick()"
+                tabindex="-1">
+          Cancel
+        </button>
+      </mat-grid-tile>
+
+    </form>
+  </mat-grid-list>
+</div>

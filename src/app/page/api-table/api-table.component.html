@@ -1,27 +1,28 @@
 <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+
   <!-- Position Column -->
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
+  <ng-container *ngFor="let item of displayedColumns; let last = last" [matColumnDef]="item">
+    <th mat-header-cell *matHeaderCellDef>{{item}}</th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
-  <!-- Street Column -->
-  <ng-container matColumnDef="Street">
-    <th mat-header-cell *matHeaderCellDef> Street </th>
-    <td mat-cell *matCellDef="let element"> {{element.autoStreet.street_start}} - {{element.autoStreet.street_finish}} </td>
-  </ng-container>
+  <!--&lt;!&ndash; StreetStart Column &ndash;&gt;-->
+  <!--<ng-container matColumnDef="street_start">-->
+    <!--<th mat-header-cell *matHeaderCellDef> StreetStart </th>-->
+    <!--<td mat-cell *matCellDef="let element"> {{element.street_start}} </td>-->
+  <!--</ng-container>-->
 
-  <!-- Category Column -->
-  <ng-container matColumnDef="Auto">
-    <th mat-header-cell *matHeaderCellDef> Auto </th>
-    <td mat-cell *matCellDef="let element"> {{element.auto.autoCategory.name}} - {{element.auto.autoMarka.name}}</td>
-  </ng-container>
+  <!--&lt;!&ndash; StreetFinish Column &ndash;&gt;-->
+  <!--<ng-container matColumnDef="street_finish">-->
+    <!--<th mat-header-cell *matHeaderCellDef> StreetFinish </th>-->
+    <!--<td mat-cell *matCellDef="let element"> {{element.street_finish}} </td>-->
+  <!--</ng-container>-->
 
-  <!-- PassangerCount Column -->
-  <ng-container matColumnDef="Count">
-    <th mat-header-cell *matHeaderCellDef> Number of passengers </th>
-    <td mat-cell *matCellDef="let element"> {{element.passanger_count}} </td>
-  </ng-container>
+  <!--&lt;!&ndash; Intervall Column &ndash;&gt;-->
+  <!--<ng-container matColumnDef="intervall">-->
+    <!--<th mat-header-cell *matHeaderCellDef> Intervall </th>-->
+    <!--<td mat-cell *matCellDef="let element"> {{element.intervall}} </td>-->
+  <!--</ng-container>-->
 
   <!-- actions -->
   <div class="actions">

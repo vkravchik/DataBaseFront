@@ -7,6 +7,7 @@ import {ToastrService} from "ngx-toastr";
 import {RouteService} from "../../services/route.service";
 import {AddRouteComponent} from "../../dialogs/add/add-route/add-route.component";
 import {EditRouteComponent} from "../../dialogs/edit/edit-route/edit-route.component";
+import {DialogsRouteComponent} from "../../dialogs/dialogs-route/dialogs-route.component";
 
 @Component({
   selector: 'app-route',
@@ -15,7 +16,7 @@ import {EditRouteComponent} from "../../dialogs/edit/edit-route/edit-route.compo
 })
 export class RouteComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'Street', 'Category', 'Marka', 'PassangerCount', 'actions'];
+  displayedColumns: string[] = ['id', 'Street', 'Auto', 'Count', 'actions'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -39,11 +40,14 @@ export class RouteComponent implements OnInit {
   getAll() {
     this._route.getAll().subscribe((res: AutoRoute[]) => {
       this.dataSource.data = res;
+      console.log(res);
     });
   }
 
   addNew() {
-    const dialogRef = this.dialog.open(AddRouteComponent);
+    const dialogRef = this.dialog.open(DialogsRouteComponent, {
+      data: {status: 1}
+    });
 
     dialogRef.afterClosed().subscribe(res => {
       if(res === 1) {
@@ -61,8 +65,8 @@ export class RouteComponent implements OnInit {
   }
 
   startEdit(id) {
-    const dialogRef = this.dialog.open(EditRouteComponent, {
-      data: {id: id}
+    const dialogRef = this.dialog.open(DialogsRouteComponent, {
+      data: {id: id, status: 0}
     });
 
     dialogRef.afterClosed().subscribe(res => {

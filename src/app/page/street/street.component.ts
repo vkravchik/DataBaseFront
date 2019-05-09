@@ -5,8 +5,7 @@ import {DialogService} from "../../services/dialog.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {StreetService} from "../../services/street.service";
-import {AddStreetComponent} from "../../dialogs/add/add-street/add-street.component";
-import {EditStreetComponent} from "../../dialogs/edit/edit-street/edit-street.component";
+import {DialogsStreetComponent} from "../../dialogs/dialogs-street/dialogs-street.component";
 
 @Component({
   selector: 'app-street',
@@ -34,6 +33,7 @@ export class StreetComponent implements OnInit {
 
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+
   }
 
   getAll() {
@@ -43,7 +43,9 @@ export class StreetComponent implements OnInit {
   }
 
   addNew() {
-    const dialogRef = this.dialog.open(AddStreetComponent);
+    const dialogRef = this.dialog.open(DialogsStreetComponent, {
+      data: {status: 1}
+    });
 
     dialogRef.afterClosed().subscribe(res => {
       if(res === 1) {
@@ -61,8 +63,8 @@ export class StreetComponent implements OnInit {
   }
 
   startEdit(id) {
-    const dialogRef = this.dialog.open(EditStreetComponent, {
-      data: {id: id}
+    const dialogRef = this.dialog.open(DialogsStreetComponent, {
+      data: {id: id, status: 0}
     });
 
     dialogRef.afterClosed().subscribe(res => {

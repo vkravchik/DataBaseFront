@@ -79,6 +79,9 @@ import { EditStreetComponent } from './dialogs/edit/edit-street/edit-street.comp
 import { AddStreetComponent } from './dialogs/add/add-street/add-street.component';
 import { AddRouteComponent } from './dialogs/add/add-route/add-route.component';
 import {EditRouteComponent} from "./dialogs/edit/edit-route/edit-route.component";
+import { DialogsStreetComponent } from './dialogs/dialogs-street/dialogs-street.component';
+import { ApiTableComponent } from './page/api-table/api-table.component';
+import { DialogsRouteComponent } from './dialogs/dialogs-route/dialogs-route.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent, data: {title: 'User'} },
@@ -99,6 +102,7 @@ const appRoutes: Routes = [
   { path: 'route', component: RouteComponent },
   { path: 'saleBuy', component: SaleBuyComponent },
   { path: 'street', component: StreetComponent },
+  // { path: 'street', component: ApiTableComponent },
   { path: '**', component: UserComponent },
 ];
 
@@ -157,6 +161,9 @@ const appRoutes: Routes = [
     AddStreetComponent,
     AddRouteComponent,
     EditRouteComponent,
+    DialogsStreetComponent,
+    ApiTableComponent,
+    DialogsRouteComponent,
   ],
   imports: [
     BrowserModule,
@@ -226,7 +233,10 @@ const appRoutes: Routes = [
     EditGroupComponent,
     EditStreetComponent,
     EditRouteComponent,
-    // DELETE
+    // DIALOGS
+    DialogsStreetComponent,
+    DialogsRouteComponent,
+
   ],
   bootstrap: [AppComponent]
 })
