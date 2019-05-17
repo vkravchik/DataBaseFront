@@ -1,4 +1,4 @@
-<form class="user-form" (ngSubmit)="submit" #formControl="ngForm">
+<form class="user-form" #formControl="ngForm">
   <div class="form">
     <mat-form-field class="example-full-width">
       <input matInput
@@ -18,7 +18,7 @@
     </mat-form-field>
 
     <div class="button">
-      <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopAdd()">Save</button>
+      <button mat-button [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopAdd()">Save</button>
       <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
     </div>
   </div>

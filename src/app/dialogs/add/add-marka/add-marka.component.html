@@ -1,5 +1,5 @@
 <div class="modal">
-  <form class="form" (ngSubmit)="submit" #formControl="ngForm" [formGroup]="form">
+  <form class="form" #formControl="ngForm" [formGroup]="form">
     <div class="form">
       <mat-form-field class="example-full-width">
         <input matInput
@@ -8,7 +8,7 @@
       </mat-form-field>
 
       <div class="button">
-        <button mat-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopAdd()">Save</button>
+        <button mat-button color="primary" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopAdd()">Save</button>
         <button mat-button color="warn" (click)="onNoClick()" tabindex="-1">Cancel</button>
       </div>
     </div>
