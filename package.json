@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod",
-    "postinstall": "ng build --prod",
+    "postinstall": "ng build --aot -prod",
     "start": "node server.js"
   },
   "private": true,
@@ -28,6 +28,7 @@
     "@angular/router": "^6.1.0",
     "angular-toastr": "^2.1.1",
     "core-js": "^2.5.4",
+    "express": "^4.17.0",
     "material-design-icons": "^3.0.1",
     "ng2-toastr": "latest",
     "ng6-toastr": "^6.0.0",
