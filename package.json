@@ -7,12 +7,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --target=production",
     "start": "node server.js"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.8.0",
     "@angular/animations": "^6.1.10",
     "@angular/cdk": "^7.3.4",
     "@angular/cli": "^7.3.9",
@@ -34,10 +34,10 @@
     "ng6-toastr": "^6.0.0",
     "ngx-toastr": "^10.0.1",
     "rxjs": "~6.2.0",
+    "typescript": "~2.9.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.8.0",
     "@angular/language-service": "^6.1.10",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
@@ -52,8 +52,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "tslint": "~5.11.0"
   },
   "engines": {
     "node": "8.11.4",
