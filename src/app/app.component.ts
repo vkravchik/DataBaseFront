@@ -10,8 +10,7 @@ export class AppComponent {
   user: string;
 
   items = [
-    {title: 'Users', path: '/user', rols: ['admin']},
-
+    // {title: 'Користувачі', path: '/user', rols: ['admin']},
 
     {title: 'Car Type', path: '/category', rols: ['admin', 'manager']},
     {title: 'Car Model', path: '/marka', rols: ['admin', 'manager']},
@@ -21,26 +20,28 @@ export class AppComponent {
 
     {title: 'Brigade', path: '/brigada', rols: ['admin', 'brigadir']},
     {title: 'Brigadier', path: '/brigadir', rols: ['admin', 'brigadir']},
-
-    {title: 'Personal Type', path: '/categoryPersonal', rols: ['admin', 'brigadir']},
-    {title: 'Sale/Buy', path: '/saleBuy', rols: ['admin', 'brigadir']},
-
-    {title: 'Hard Routes', path: '/hardRoute', rols: ['admin', 'brigadir']},
-
-    {title: 'Infrastructs', path: '/infrastruct', rols: ['admin', 'brigadir']},
-
-    {title: 'Personals', path: '/personal', rols: ['admin', 'brigadir']},
-
-    {title: 'Problems', path: '/problem', rols: ['admin', 'brigadir']},
-
-    {title: 'Repairs', path: '/repair', rols: ['admin', 'brigadir']},
-
     {title: 'Groups', path: '/group', rols: ['admin', 'brigadir']},
 
+    {title: 'Personal Type', path: '/categoryPersonal', rols: ['admin', 'brigadir']},
+    {title: 'Personals', path: '/personal', rols: ['admin', 'brigadir']},
+
+    {title: 'Hard Routes', path: '/hardRoute', rols: ['admin', 'brigadir']},
+    {title: 'Routes', path: '/route', rols: ['admin', 'brigadir']},
+
+    {title: 'Infrastructs', path: '/infrastruct', rols: ['admin', 'brigadir']},
     {title: 'Streets', path: '/street', rols: ['admin', 'brigadir']},
 
-    {title: 'Routes', path: '/route', rols: ['admin', 'brigadir']},
-    ];
+    {title: 'Problems', path: '/problem', rols: ['admin', 'brigadir']},
+    {title: 'Repairs', path: '/repair', rols: ['admin', 'brigadir']},
+    {title: 'Sale/Buy', path: '/saleBuy', rols: ['admin', 'brigadir']},
+
+
+
+  ];
+
+  queries = [
+    {title: 'Users', path: '/user', rols: ['admin']}
+  ];
 
   constructor(private _user: UserService) {
 

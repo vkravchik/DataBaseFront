@@ -60,3 +60,19 @@ h1.example-app-name {
   flex: 1 0 auto;
 }
 
+
+#container {
+  display: flex;
+  flex-direction: column;
+  top: 64px !important;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@media(max-width: 599px) {
+  #container {
+    top: 56px !important;
+  }
+}
