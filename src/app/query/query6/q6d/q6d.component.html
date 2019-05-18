@@ -4,6 +4,30 @@
 
       <mat-grid-tile>
         <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select (selectionChange)="selectedCategory($event.value)">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let item of categorys" [value]="item.id">
+              {{item.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Marka</mat-label>
+          <mat-select (selectionChange)="selectedMarka($event.value)">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let item of markas" [value]="item.id">
+              {{item.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
           <mat-label>Auto</mat-label>
           <mat-select (selectionChange)="selectedAuto($event.value)" formControlName="auto">
             <mat-option>None</mat-option>
@@ -29,7 +53,6 @@
           Cancel
         </button>
       </mat-grid-tile>
-
     </form>
   </mat-grid-list>
 </div>

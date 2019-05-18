@@ -4,15 +4,15 @@ import {Auto} from "../../model/Auto";
 import {QueryService} from "../../services/query.service";
 
 @Component({
-  selector: 'app-query1',
-  templateUrl: './query1.component.html',
-  styleUrls: ['./query1.component.css']
+  selector: 'app-query4',
+  templateUrl: './query4.component.html',
+  styleUrls: ['./query4.component.css']
 })
-export class Query1Component implements OnInit {
+export class Query4Component implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns: string[] = ['id', 'Category', 'Marka'];
+  displayedColumns: string[] = ['id', 'Street', 'Auto', 'Count'];
   dataSource = new MatTableDataSource<Auto>();
 
   constructor(private query: QueryService) {
@@ -25,7 +25,7 @@ export class Query1Component implements OnInit {
   }
 
   executeQuery() {
-    this.query.query1().subscribe(res => {
+    this.query.query4().subscribe(res => {
       console.log(res);
       this.dataSource.data = res;
     });

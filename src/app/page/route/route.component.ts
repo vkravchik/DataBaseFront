@@ -5,8 +5,6 @@ import {DialogService} from "../../services/dialog.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {RouteService} from "../../services/route.service";
-import {AddRouteComponent} from "../../dialogs/add/add-route/add-route.component";
-import {EditRouteComponent} from "../../dialogs/edit/edit-route/edit-route.component";
 import {DialogsRouteComponent} from "../../dialogs/dialogs-route/dialogs-route.component";
 
 @Component({

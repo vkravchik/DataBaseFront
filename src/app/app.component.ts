@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "./services/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import {UserService} from "./services/user.service";
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  user: string;
+  queryFlag = false;
 
   items = [
     // {title: 'Користувачі', path: '/user', rols: ['admin']},
@@ -39,17 +40,19 @@ export class AppComponent {
   ];
 
   queries = [
-    {title: 'Query_2', path: '/query2', rols: ['admin']}
+    {title: 'Query_1', path: '/query1', rols: ['admin']},
+    {title: 'Query_2', path: '/query2', rols: ['admin']},
+    {title: 'Query_3', path: '/query3', rols: ['admin']},
+    {title: 'Query_4', path: '/query4', rols: ['admin']},
+    {title: 'Query_6', path: '/query6', rols: ['admin']},
+    {title: 'Query_7', path: '/query7', rols: ['admin']},
+    {title: 'Query_8', path: '/query8', rols: ['admin']},
+    {title: 'Query_9', path: '/query9', rols: ['admin']},
+    {title: 'Query_10', path: '/query10', rols: ['admin']}
   ];
 
-  constructor(private _user: UserService) {
-
-  }
-
-  whoIs(rols) {
-    // let user = this._user.getStorageInfo();
-    // let roles = rols.concat(' ');
-    // return !roles.includes(user);
+  constructor(private router: Router) {
+    console.log(this.router.url);
   }
 }
 

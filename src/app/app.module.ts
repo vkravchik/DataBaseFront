@@ -17,7 +17,8 @@ import {
   MatNativeDateModule,
   MatPaginatorModule,
   MatSelectModule,
-  MatSidenavModule, MatSlideToggleModule,
+  MatSidenavModule,
+  MatSlideToggleModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule
@@ -85,10 +86,12 @@ import {DialogsRouteComponent} from './dialogs/dialogs-route/dialogs-route.compo
 import {Query1Component} from './query/query1/query1.component';
 import {Query2Component} from './query/query2/query2.component';
 import {Q2dComponent} from './query/query2/q2d/q2d.component';
-import { Query3Component } from './query/query3/query3.component';
-import { Q3dComponent } from './query/query3/q3d/q3d.component';
-import { Query10Component } from './query/query10/query10.component';
-import { Q10dComponent } from './query/query10/q10d/q10d.component';
+import {Query3Component} from './query/query3/query3.component';
+import {Query10Component} from './query/query10/query10.component';
+import {Q10dComponent} from './query/query10/q10d/q10d.component';
+import { Query4Component } from './query/query4/query4.component';
+import { Query6Component } from './query/query6/query6.component';
+import { Q6dComponent } from './query/query6/q6d/q6d.component';
 
 const appRoutes: Routes = [
   {path: '', component: UserComponent, data: {title: 'User'}},
@@ -110,7 +113,12 @@ const appRoutes: Routes = [
   {path: 'saleBuy', component: SaleBuyComponent},
   {path: 'street', component: StreetComponent},
   //QUERY
+  {path: 'query1', component: Query1Component},
   {path: 'query2', component: Query2Component},
+  {path: 'query3', component: Query3Component},
+  {path: 'query4', component: Query4Component},
+  {path: 'query6', component: Query6Component},
+  {path: 'query10', component: Query10Component},
 
   // { path: 'street', component: ApiTableComponent },
   {path: '**', component: UserComponent},
@@ -178,9 +186,11 @@ const appRoutes: Routes = [
     Query2Component,
     Q2dComponent,
     Query3Component,
-    Q3dComponent,
     Query10Component,
     Q10dComponent,
+    Query4Component,
+    Query6Component,
+    Q6dComponent,
   ],
   imports: [
     BrowserModule,
@@ -253,9 +263,10 @@ const appRoutes: Routes = [
     // DIALOGS
     DialogsStreetComponent,
     DialogsRouteComponent,
-
     //  QUERY
     Q2dComponent,
+    Q6dComponent,
+    Q10dComponent,
 
   ],
   bootstrap: [AppComponent]
