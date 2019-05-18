@@ -92,6 +92,10 @@ import {Q10dComponent} from './query/query10/q10d/q10d.component';
 import { Query4Component } from './query/query4/query4.component';
 import { Query6Component } from './query/query6/query6.component';
 import { Q6dComponent } from './query/query6/q6d/q6d.component';
+import { Query7Component } from './query/query7/query7.component';
+import { Query8Component } from './query/query8/query8.component';
+import { Q8dComponent } from './query/query8/q8d/q8d.component';
+import { Query9Component } from './query/query9/query9.component';
 
 const appRoutes: Routes = [
   {path: '', component: UserComponent, data: {title: 'User'}},
@@ -118,6 +122,9 @@ const appRoutes: Routes = [
   {path: 'query3', component: Query3Component},
   {path: 'query4', component: Query4Component},
   {path: 'query6', component: Query6Component},
+  {path: 'query7', component: Query7Component},
+  {path: 'query8', component: Query8Component},
+  {path: 'query9', component: Query9Component},
   {path: 'query10', component: Query10Component},
 
   // { path: 'street', component: ApiTableComponent },
@@ -191,6 +198,10 @@ const appRoutes: Routes = [
     Query4Component,
     Query6Component,
     Q6dComponent,
+    Query7Component,
+    Query8Component,
+    Q8dComponent,
+    Query9Component,
   ],
   imports: [
     BrowserModule,
@@ -266,6 +277,7 @@ const appRoutes: Routes = [
     //  QUERY
     Q2dComponent,
     Q6dComponent,
+    Q8dComponent,
     Q10dComponent,
 
   ],
