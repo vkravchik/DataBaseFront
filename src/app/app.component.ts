@@ -36,11 +36,10 @@ export class AppComponent {
     {title: 'Sale/Buy', path: '/saleBuy', rols: ['admin', 'brigadir']},
 
 
-
   ];
 
   queries = [
-    {title: 'Users', path: '/user', rols: ['admin']}
+    {title: 'Query_2', path: '/query2', rols: ['admin']}
   ];
 
   constructor(private _user: UserService) {

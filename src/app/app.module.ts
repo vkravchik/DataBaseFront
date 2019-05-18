@@ -63,47 +63,57 @@ import {EditCategoryPersonalComponent} from './dialogs/edit/edit-category-person
 import {AddSaleBuyComponent} from './dialogs/add/add-sale-buy/add-sale-buy.component';
 import {EditSaleBuyComponent} from './dialogs/edit/edit-sale-buy/edit-sale-buy.component';
 import {DatePipe} from "@angular/common";
-import { AddHarRouteComponent } from './dialogs/add/add-har-route/add-har-route.component';
-import { EditHardRouteComponent } from './dialogs/edit/edit-hard-route/edit-hard-route.component';
-import { AddInfrastructComponent } from './dialogs/add/add-infrastruct/add-infrastruct.component';
-import { EditInfrastructComponent } from './dialogs/edit/edit-infrastruct/edit-infrastruct.component';
-import { AddPersonalComponent } from './dialogs/add/add-personal/add-personal.component';
-import { EditPersonalComponent } from './dialogs/edit/edit-personal/edit-personal.component';
-import { AddRepairComponent } from './dialogs/add/add-repair/add-repair.component';
-import { EditRepairComponent } from './dialogs/edit/edit-repair/edit-repair.component';
-import { EditProblemComponent } from './dialogs/edit/edit-problem/edit-problem.component';
-import { AddProblemComponent } from './dialogs/add/add-problem/add-problem.component';
-import { AddGroupComponent } from './dialogs/add/add-group/add-group.component';
-import { EditGroupComponent } from './dialogs/edit/edit-group/edit-group.component';
-import { EditStreetComponent } from './dialogs/edit/edit-street/edit-street.component';
-import { AddStreetComponent } from './dialogs/add/add-street/add-street.component';
-import { AddRouteComponent } from './dialogs/add/add-route/add-route.component';
+import {AddHarRouteComponent} from './dialogs/add/add-har-route/add-har-route.component';
+import {EditHardRouteComponent} from './dialogs/edit/edit-hard-route/edit-hard-route.component';
+import {AddInfrastructComponent} from './dialogs/add/add-infrastruct/add-infrastruct.component';
+import {EditInfrastructComponent} from './dialogs/edit/edit-infrastruct/edit-infrastruct.component';
+import {AddPersonalComponent} from './dialogs/add/add-personal/add-personal.component';
+import {EditPersonalComponent} from './dialogs/edit/edit-personal/edit-personal.component';
+import {AddRepairComponent} from './dialogs/add/add-repair/add-repair.component';
+import {EditRepairComponent} from './dialogs/edit/edit-repair/edit-repair.component';
+import {EditProblemComponent} from './dialogs/edit/edit-problem/edit-problem.component';
+import {AddProblemComponent} from './dialogs/add/add-problem/add-problem.component';
+import {AddGroupComponent} from './dialogs/add/add-group/add-group.component';
+import {EditGroupComponent} from './dialogs/edit/edit-group/edit-group.component';
+import {EditStreetComponent} from './dialogs/edit/edit-street/edit-street.component';
+import {AddStreetComponent} from './dialogs/add/add-street/add-street.component';
+import {AddRouteComponent} from './dialogs/add/add-route/add-route.component';
 import {EditRouteComponent} from "./dialogs/edit/edit-route/edit-route.component";
-import { DialogsStreetComponent } from './dialogs/dialogs-street/dialogs-street.component';
-import { ApiTableComponent } from './page/api-table/api-table.component';
-import { DialogsRouteComponent } from './dialogs/dialogs-route/dialogs-route.component';
+import {DialogsStreetComponent} from './dialogs/dialogs-street/dialogs-street.component';
+import {ApiTableComponent} from './page/api-table/api-table.component';
+import {DialogsRouteComponent} from './dialogs/dialogs-route/dialogs-route.component';
+import {Query1Component} from './query/query1/query1.component';
+import {Query2Component} from './query/query2/query2.component';
+import {Q2dComponent} from './query/query2/q2d/q2d.component';
+import { Query3Component } from './query/query3/query3.component';
+import { Q3dComponent } from './query/query3/q3d/q3d.component';
+import { Query10Component } from './query/query10/query10.component';
+import { Q10dComponent } from './query/query10/q10d/q10d.component';
 
 const appRoutes: Routes = [
-  { path: '', component: UserComponent, data: {title: 'User'} },
-  { path: 'auto', component: AutoComponent },
-  { path: 'brigada', component: BrigadaComponent },
-  { path: 'brigadir', component: BrigadirComponent },
-  { path: 'category', component: CategoryComponent },
-  { path: 'categoryPersonal', component: CategoryPersonalComponent },
-  { path: 'drivers', component: DriversComponent },
-  { path: 'group', component: GroupComponent },
-  { path: 'hardRoute', component: HardRouteComponent },
-  { path: 'infrastruct', component: InfrastructComponent },
-  { path: 'marka', component: MarkaComponent },
-  { path: 'prop', component: PropComponent },
-  { path: 'personal', component: PersonalComponent },
-  { path: 'problem', component: ProblemComponent },
-  { path: 'repair', component: RepairComponent },
-  { path: 'route', component: RouteComponent },
-  { path: 'saleBuy', component: SaleBuyComponent },
-  { path: 'street', component: StreetComponent },
+  {path: '', component: UserComponent, data: {title: 'User'}},
+  {path: 'auto', component: AutoComponent},
+  {path: 'brigada', component: BrigadaComponent},
+  {path: 'brigadir', component: BrigadirComponent},
+  {path: 'category', component: CategoryComponent},
+  {path: 'categoryPersonal', component: CategoryPersonalComponent},
+  {path: 'drivers', component: DriversComponent},
+  {path: 'group', component: GroupComponent},
+  {path: 'hardRoute', component: HardRouteComponent},
+  {path: 'infrastruct', component: InfrastructComponent},
+  {path: 'marka', component: MarkaComponent},
+  {path: 'prop', component: PropComponent},
+  {path: 'personal', component: PersonalComponent},
+  {path: 'problem', component: ProblemComponent},
+  {path: 'repair', component: RepairComponent},
+  {path: 'route', component: RouteComponent},
+  {path: 'saleBuy', component: SaleBuyComponent},
+  {path: 'street', component: StreetComponent},
+  //QUERY
+  {path: 'query2', component: Query2Component},
+
   // { path: 'street', component: ApiTableComponent },
-  { path: '**', component: UserComponent },
+  {path: '**', component: UserComponent},
 ];
 
 @NgModule({
@@ -164,6 +174,13 @@ const appRoutes: Routes = [
     DialogsStreetComponent,
     ApiTableComponent,
     DialogsRouteComponent,
+    Query1Component,
+    Query2Component,
+    Q2dComponent,
+    Query3Component,
+    Q3dComponent,
+    Query10Component,
+    Q10dComponent,
   ],
   imports: [
     BrowserModule,
@@ -237,7 +254,11 @@ const appRoutes: Routes = [
     DialogsStreetComponent,
     DialogsRouteComponent,
 
+    //  QUERY
+    Q2dComponent,
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
