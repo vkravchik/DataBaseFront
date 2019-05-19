@@ -1,0 +1,63 @@
+<div class="modal">
+  <mat-grid-list cols="1" rowHeight="60px">
+    <form class="form" #formControl="ngForm" [formGroup]="form">
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Person</mat-label>
+          <mat-select (selectionChange)="selectedPerson($event.value)">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let item of persons" [value]="item.id">
+              {{item.name}} - {{item.surname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Auto</mat-label>
+          <mat-select (selectionChange)="selectedAuto($event.value)" formControlName="auto">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let item of auto" [value]="item.id">
+              {{item.autoCategory.name}} - {{item.autoMarka.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a start date" formControlName="date_start">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Choose a finish date" formControlName="date_finish">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-button
+                color="primary"
+                [disabled]="!formControl.valid"
+                [mat-dialog-close]="1"
+                (click)="stop()">
+          Create
+        </button>
+        <button mat-button
+                color="warn"
+                (click)="onNoClick()"
+                tabindex="-1">
+          Cancel
+        </button>
+      </mat-grid-tile>
+
+    </form>
+  </mat-grid-list>
+</div>

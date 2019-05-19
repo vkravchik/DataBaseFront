@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {UserService} from "./services/user.service";
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -48,7 +47,11 @@ export class AppComponent {
     {title: 'Query_7', path: '/query7', rols: ['admin']},
     {title: 'Query_8', path: '/query8', rols: ['admin']},
     {title: 'Query_9', path: '/query9', rols: ['admin']},
-    {title: 'Query_10', path: '/query10', rols: ['admin']}
+    {title: 'Query_10', path: '/query10', rols: ['admin']},
+    {title: 'Query_11', path: '/query11', rols: ['admin']},
+    {title: 'Query_12', path: '/query12', rols: ['admin']},
+    {title: 'Query_13', path: '/query13', rols: ['admin']},
+    {title: 'Query_14', path: '/query14', rols: ['admin']},
   ];
 
   constructor(private router: Router) {

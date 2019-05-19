@@ -1,0 +1,45 @@
+<div class="modal">
+  <mat-grid-list cols="1" rowHeight="60px">
+    <form class="form" #formControl="ngForm" [formGroup]="form">
+
+      <mat-grid-tile>
+        <mat-slide-toggle (toggleChange)="toggleButton()" formControlName="status">
+          <mat-label>{{toggle ? 'Buy' : 'Sale'}}</mat-label>
+        </mat-slide-toggle>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a start date" formControlName="date_start">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Choose a finish date" formControlName="date_finish">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-button
+                color="primary"
+                [disabled]="!formControl.valid"
+                [mat-dialog-close]="1"
+                (click)="stop()">
+          Create
+        </button>
+        <button mat-button
+                color="warn"
+                (click)="onNoClick()"
+                tabindex="-1">
+          Cancel
+        </button>
+      </mat-grid-tile>
+
+    </form>
+  </mat-grid-list>
+</div>

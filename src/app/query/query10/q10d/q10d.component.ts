@@ -14,10 +14,6 @@ import {DatePipe} from "@angular/common";
   styleUrls: ['./q10d.component.css']
 })
 export class Q10dComponent implements OnInit {
-//   this.form.patchValue({
-//                          date: this.datepipe.transform(res.date, 'yyyy-MM-dd'),
-//   price: res.price,
-// });
   form: FormGroup;
   auto: Auto[];
   private selectAuto: number;

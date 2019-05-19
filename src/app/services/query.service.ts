@@ -215,4 +215,89 @@ export class QueryService {
     )
   }
 
+  query11(category, detail): Observable<any[]> {
+    let url = environment.apiUrl + 'repair/getAllByCarTypeAndDetail';
+
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    let params = new HttpParams().set('carType', category).set('detail', detail);
+
+    return this.http.get(url, {headers: headers, params: params}).pipe(
+      map( res => {
+        this.rows = res;
+        return this.rows;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
+
+  query12(status, date_start, date_finish): Observable<any[]> {
+    let url = environment.apiUrl + 'saleBuy/getAllByDate';
+
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    let params = new HttpParams().set('status', status).set('date_start', date_start).set('date_finish', date_finish);
+
+    return this.http.get(url, {headers: headers, params: params}).pipe(
+      map( res => {
+        this.rows = res;
+        return this.rows;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
+
+  query13(brigadir): Observable<any[]> {
+    let url = environment.apiUrl + 'group/getBrigadir';
+
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    let params = new HttpParams().set('id', brigadir);
+
+    return this.http.get(url, {headers: headers, params: params}).pipe(
+      map( res => {
+        this.rows = res;
+        return this.rows;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
+
+  query14_1(person, date_start, date_finish): Observable<any[]> {
+    let url = environment.apiUrl + 'repair/getAllByPersonAndDate';
+
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    let params = new HttpParams().set('person', person).set('date_start', date_start).set('date_finish', date_finish);
+
+    return this.http.get(url, {headers: headers, params: params}).pipe(
+      map( res => {
+        this.rows = res;
+        return this.rows;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
+
+  query14_2(person, auto, date_start, date_finish): Observable<any[]> {
+    let url = environment.apiUrl + 'repair/getAllByPersonAndDate';
+
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    let params = new HttpParams().set('person', person).set('auto', auto).set('date_start', date_start).set('date_finish', date_finish);
+
+    return this.http.get(url, {headers: headers, params: params}).pipe(
+      map( res => {
+        this.rows = res;
+        return this.rows;
+      }),
+      catchError(this._error.handleError)
+    )
+  }
+
 }

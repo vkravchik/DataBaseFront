@@ -96,9 +96,17 @@ import { Query7Component } from './query/query7/query7.component';
 import { Query8Component } from './query/query8/query8.component';
 import { Q8dComponent } from './query/query8/q8d/q8d.component';
 import { Query9Component } from './query/query9/query9.component';
+import { Query11Component } from './query/query11/query11.component';
+import { Query12Component } from './query/query12/query12.component';
+import { Query13Component } from './query/query13/query13.component';
+import { Query14Component } from './query/query14/query14.component';
+import { Q11dComponent } from './query/query11/q11d/q11d.component';
+import { Q12dComponent } from './query/query12/q12d/q12d.component';
+import { Q13dComponent } from './query/query13/q13d/q13d.component';
+import { Q14dComponent } from './query/query14/q14d/q14d.component';
 
 const appRoutes: Routes = [
-  {path: '', component: UserComponent, data: {title: 'User'}},
+  {path: '', component: AutoComponent, data: {title: 'Auto'}},
   {path: 'auto', component: AutoComponent},
   {path: 'brigada', component: BrigadaComponent},
   {path: 'brigadir', component: BrigadirComponent},
@@ -126,6 +134,10 @@ const appRoutes: Routes = [
   {path: 'query8', component: Query8Component},
   {path: 'query9', component: Query9Component},
   {path: 'query10', component: Query10Component},
+  {path: 'query11', component: Query11Component},
+  {path: 'query12', component: Query12Component},
+  {path: 'query13', component: Query13Component},
+  {path: 'query14', component: Query14Component},
 
   // { path: 'street', component: ApiTableComponent },
   {path: '**', component: UserComponent},
@@ -202,6 +214,14 @@ const appRoutes: Routes = [
     Query8Component,
     Q8dComponent,
     Query9Component,
+    Query11Component,
+    Query12Component,
+    Query13Component,
+    Query14Component,
+    Q11dComponent,
+    Q12dComponent,
+    Q13dComponent,
+    Q14dComponent,
   ],
   imports: [
     BrowserModule,
@@ -279,6 +299,10 @@ const appRoutes: Routes = [
     Q6dComponent,
     Q8dComponent,
     Q10dComponent,
+    Q11dComponent,
+    Q12dComponent,
+    Q13dComponent,
+    Q14dComponent,
 
   ],
   bootstrap: [AppComponent]

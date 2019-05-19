@@ -1,0 +1,41 @@
+<table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- PersonalName Column -->
+  <ng-container matColumnDef="PersonalName">
+    <th mat-header-cell *matHeaderCellDef> Personal Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.autoPersonal.name}} {{element.autoPersonal.surname}} </td>
+  </ng-container>
+
+  <!-- DriversName Column -->
+  <ng-container matColumnDef="DriversName">
+    <th mat-header-cell *matHeaderCellDef> Drivers Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.autoDrivers.name}} {{element.autoDrivers.surname}}</td>
+  </ng-container>
+
+  <!-- BrigadaName Column -->
+  <ng-container matColumnDef="BrigadaName">
+    <th mat-header-cell *matHeaderCellDef> Brigada Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.autoBrigada.name}}</td>
+  </ng-container>
+
+  <!-- BrigadirName Column -->
+  <ng-container matColumnDef="BrigadirName">
+    <th mat-header-cell *matHeaderCellDef> Brigadir Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.autoBrigadir.name}} {{element.autoBrigadir.surname}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator #paginator
+               [length]="dataSource.filteredData.length"
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

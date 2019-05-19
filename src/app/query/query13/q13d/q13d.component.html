@@ -1,0 +1,34 @@
+<div class="modal">
+  <mat-grid-list cols="1" rowHeight="60px">
+    <form class="form" #formControl="ngForm" [formGroup]="form">
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Brigadir</mat-label>
+          <mat-select (selectionChange)="selectedBrigadir($event.value)">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let item of brigadirs" [value]="item.id">
+              {{item.name}} - {{item.surname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-button
+                color="primary"
+                [disabled]="!formControl.valid"
+                [mat-dialog-close]="1"
+                (click)="stop()">
+          Create
+        </button>
+        <button mat-button
+                color="warn"
+                (click)="onNoClick()"
+                tabindex="-1">
+          Cancel
+        </button>
+      </mat-grid-tile>
+    </form>
+  </mat-grid-list>
+</div>
