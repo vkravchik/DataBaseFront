@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
@@ -15,7 +15,7 @@ import {
   MatInputModule,
   MatListModule,
   MatNativeDateModule,
-  MatPaginatorModule,
+  MatPaginatorModule, MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
   MatSlideToggleModule,
@@ -24,11 +24,9 @@ import {
   MatToolbarModule
 } from "@angular/material";
 import {CdkTableModule} from "@angular/cdk/table";
-import {UserComponent} from './page/user/user.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from "ngx-toastr";
-import {EditUserComponent} from './dialogs/edit/edit-user/edit-user.component';
 import {AutoComponent} from './page/auto/auto.component';
 import {BrigadaComponent} from './page/brigada/brigada.component';
 import {BrigadirComponent} from './page/brigadir/brigadir.component';
@@ -47,7 +45,6 @@ import {RouteComponent} from './page/route/route.component';
 import {SaleBuyComponent} from './page/sale-buy/sale-buy.component';
 import {StreetComponent} from './page/street/street.component';
 import {EditCategoryComponent} from './dialogs/edit/edit-category/edit-category.component';
-import {AddUserComponent} from './dialogs/add/add-user/add-user.component';
 import {AddDriverComponent} from './dialogs/add/add-driver/add-driver.component';
 import {EditDriverComponent} from './dialogs/edit/edit-driver/edit-driver.component';
 import {AddCategoryComponent} from './dialogs/add/add-category/add-category.component';
@@ -104,12 +101,20 @@ import { Q11dComponent } from './query/query11/q11d/q11d.component';
 import { Q12dComponent } from './query/query12/q12d/q12d.component';
 import { Q13dComponent } from './query/query13/q13d/q13d.component';
 import { Q14dComponent } from './query/query14/q14d/q14d.component';
+import {AuthGuard} from "./guards/auth.guard";
+import {LoginComponent} from "./page/login/login.component";
+import {RegisterComponent} from "./page/register/register.component";
+import {JwtInterceptor} from "./helpers/jwt.interceptor";
+import {ErrorInterceptor} from "./helpers/error.interceptor";
 
 const appRoutes: Routes = [
   {path: '', component: AutoComponent, data: {title: 'Auto'}},
-  {path: 'auto', component: AutoComponent},
-  {path: 'brigada', component: BrigadaComponent},
-  {path: 'brigadir', component: BrigadirComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
+  {path: 'auto', component: AutoComponent, canActivate: [AuthGuard]},
+  {path: 'brigada', component: BrigadaComponent, canActivate: [AuthGuard]},
+  {path: 'brigadir', component: BrigadirComponent, canActivate: [AuthGuard]},
   {path: 'category', component: CategoryComponent},
   {path: 'categoryPersonal', component: CategoryPersonalComponent},
   {path: 'drivers', component: DriversComponent},
@@ -140,14 +145,12 @@ const appRoutes: Routes = [
   {path: 'query14', component: Query14Component},
 
   // { path: 'street', component: ApiTableComponent },
-  {path: '**', component: UserComponent},
+  {path: '**', component: AutoComponent},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    EditUserComponent,
     AutoComponent,
     BrigadaComponent,
     BrigadirComponent,
@@ -166,7 +169,6 @@ const appRoutes: Routes = [
     SaleBuyComponent,
     StreetComponent,
     EditCategoryComponent,
-    AddUserComponent,
     AddDriverComponent,
     EditDriverComponent,
     AddCategoryComponent,
@@ -222,6 +224,9 @@ const appRoutes: Routes = [
     Q12dComponent,
     Q13dComponent,
     Q14dComponent,
+
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -252,11 +257,14 @@ const appRoutes: Routes = [
     MatSlideToggleModule,
     MatSortModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [MatDatepickerModule, DatePipe],
+  providers: [MatDatepickerModule, DatePipe,
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+  ],
   entryComponents: [
     // ADD
-    AddUserComponent,
     AddDriverComponent,
     AddCategoryComponent,
     AddMarkaComponent,
@@ -276,7 +284,6 @@ const appRoutes: Routes = [
     // EDIT
     EditCategoryComponent,
     EditDriverComponent,
-    EditUserComponent,
     EditMarkaComponent,
     EditAutoComponent,
     EditBrigadaComponent,

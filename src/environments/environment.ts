@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/rest/',
+  apiUrl: 'http://localhost:8080/rest',
+  apiUrlA: 'http://localhost:8080/api/',
   apiUser: '/users',
   apiDriver: '/drivers',
   apiCategory: '/category',
