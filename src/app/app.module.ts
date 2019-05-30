@@ -86,31 +86,32 @@ import {Q2dComponent} from './query/query2/q2d/q2d.component';
 import {Query3Component} from './query/query3/query3.component';
 import {Query10Component} from './query/query10/query10.component';
 import {Q10dComponent} from './query/query10/q10d/q10d.component';
-import { Query4Component } from './query/query4/query4.component';
-import { Query6Component } from './query/query6/query6.component';
-import { Q6dComponent } from './query/query6/q6d/q6d.component';
-import { Query7Component } from './query/query7/query7.component';
-import { Query8Component } from './query/query8/query8.component';
-import { Q8dComponent } from './query/query8/q8d/q8d.component';
-import { Query9Component } from './query/query9/query9.component';
-import { Query11Component } from './query/query11/query11.component';
-import { Query12Component } from './query/query12/query12.component';
-import { Query13Component } from './query/query13/query13.component';
-import { Query14Component } from './query/query14/query14.component';
-import { Q11dComponent } from './query/query11/q11d/q11d.component';
-import { Q12dComponent } from './query/query12/q12d/q12d.component';
-import { Q13dComponent } from './query/query13/q13d/q13d.component';
-import { Q14dComponent } from './query/query14/q14d/q14d.component';
+import {Query4Component} from './query/query4/query4.component';
+import {Query6Component} from './query/query6/query6.component';
+import {Q6dComponent} from './query/query6/q6d/q6d.component';
+import {Query7Component} from './query/query7/query7.component';
+import {Query8Component} from './query/query8/query8.component';
+import {Q8dComponent} from './query/query8/q8d/q8d.component';
+import {Query9Component} from './query/query9/query9.component';
+import {Query11Component} from './query/query11/query11.component';
+import {Query12Component} from './query/query12/query12.component';
+import {Query13Component} from './query/query13/query13.component';
+import {Query14Component} from './query/query14/query14.component';
+import {Q11dComponent} from './query/query11/q11d/q11d.component';
+import {Q12dComponent} from './query/query12/q12d/q12d.component';
+import {Q13dComponent} from './query/query13/q13d/q13d.component';
+import {Q14dComponent} from './query/query14/q14d/q14d.component';
 import {AuthGuard} from "./guards/auth.guard";
 import {LoginComponent} from "./page/login/login.component";
 import {RegisterComponent} from "./page/register/register.component";
 import {JwtInterceptor} from "./helpers/jwt.interceptor";
 import {ErrorInterceptor} from "./helpers/error.interceptor";
+import {TitleComponent} from './title/title.component';
 
 const appRoutes: Routes = [
-  {path: '', component: AutoComponent, data: {title: 'Auto'}},
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  {path: '', component: TitleComponent, data: {title: 'Auto'}},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
 
   {path: 'auto', component: AutoComponent, canActivate: [AuthGuard]},
   {path: 'brigada', component: BrigadaComponent, canActivate: [AuthGuard]},
@@ -227,6 +228,7 @@ const appRoutes: Routes = [
 
     LoginComponent,
     RegisterComponent,
+    TitleComponent,
   ],
   imports: [
     BrowserModule,

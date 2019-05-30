@@ -18,7 +18,7 @@ export class QueryService {
   }
 
   query1(): Observable<any[]> {
-    return this.http.get(environment.apiUrl + 'auto/getAll').pipe(
+    return this.http.get(environment.apiUrl + '/auto/getAll').pipe(
       map( res => {
         this.rows = res;
         return this.rows;
@@ -28,7 +28,7 @@ export class QueryService {
   }
 
   query2_1(): Observable<any[]> {
-    let url = environment.apiUrl + 'drivers/getAll';
+    let url = environment.apiUrl + '/drivers/getAll';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -43,7 +43,7 @@ export class QueryService {
   }
 
   query2_2(auto): Observable<any[]> {
-    let url = environment.apiUrl + 'drivers/getAllByAuto';
+    let url = environment.apiUrl + '/drivers/getAllByAuto';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -59,7 +59,7 @@ export class QueryService {
   }
 
   query3(): Observable<any[]> {
-    let url = environment.apiUrl + 'drivers/getAll';
+    let url = environment.apiUrl + '/drivers/getAll';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -74,7 +74,7 @@ export class QueryService {
   }
 
   query4(): Observable<any[]> {
-    let url = environment.apiUrl + 'route/getAll';
+    let url = environment.apiUrl + '/route/getAll';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -89,7 +89,7 @@ export class QueryService {
   }
 
   query6_1(category): Observable<any[]> {
-    let url = environment.apiUrl + 'repair/getAllByCategory';
+    let url = environment.apiUrl + '/repair/getAllByCategory';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -105,7 +105,7 @@ export class QueryService {
   }
 
   query6_2(marka): Observable<any[]> {
-    let url = environment.apiUrl + 'repair/getAllByMarka';
+    let url = environment.apiUrl + '/repair/getAllByMarka';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -121,7 +121,7 @@ export class QueryService {
   }
 
   query6_3(auto): Observable<any[]> {
-    let url = environment.apiUrl + 'repair/getAllByAuto';
+    let url = environment.apiUrl + '/repair/getAllByAuto';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -137,7 +137,7 @@ export class QueryService {
   }
 
   query7(): Observable<any[]> {
-    let url = environment.apiUrl + 'group/getAll';
+    let url = environment.apiUrl + '/group/getAll';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -152,7 +152,7 @@ export class QueryService {
   }
 
   query8_1(): Observable<any[]> {
-    let url = environment.apiUrl + 'infrastruct/getAllGarage';
+    let url = environment.apiUrl + '/infrastruct/getAllGarage';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -167,7 +167,7 @@ export class QueryService {
   }
 
   query8_2(category): Observable<any[]> {
-    let url = environment.apiUrl + 'infrastruct/getAllGarage';
+    let url = environment.apiUrl + '/infrastruct/getAllGarage';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -184,7 +184,7 @@ export class QueryService {
   }
 
   query9(): Observable<any[]> {
-    let url = environment.apiUrl + 'auto/getAll';
+    let url = environment.apiUrl + '/auto/getAll';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -199,7 +199,7 @@ export class QueryService {
   }
 
   query10(auto, date): Observable<any[]> {
-    let url = environment.apiUrl + 'hardRoute/findByAutoAndDate';
+    let url = environment.apiUrl + '/hardRoute/findByAutoAndDate';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -216,7 +216,7 @@ export class QueryService {
   }
 
   query11(category, detail): Observable<any[]> {
-    let url = environment.apiUrl + 'repair/getAllByCarTypeAndDetail';
+    let url = environment.apiUrl + '/repair/getAllByCarTypeAndDetail';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -233,7 +233,7 @@ export class QueryService {
   }
 
   query12(status, date_start, date_finish): Observable<any[]> {
-    let url = environment.apiUrl + 'saleBuy/getAllByDate';
+    let url = environment.apiUrl + '/saleBuy/getAllByDate';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -250,7 +250,7 @@ export class QueryService {
   }
 
   query13(brigadir): Observable<any[]> {
-    let url = environment.apiUrl + 'group/getBrigadir';
+    let url = environment.apiUrl + '/group/getBrigadir';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -267,7 +267,7 @@ export class QueryService {
   }
 
   query14_1(person, date_start, date_finish): Observable<any[]> {
-    let url = environment.apiUrl + 'repair/getAllByPersonAndDate';
+    let url = environment.apiUrl + '/repair/getAllByPersonAndDate';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -284,7 +284,7 @@ export class QueryService {
   }
 
   query14_2(person, auto, date_start, date_finish): Observable<any[]> {
-    let url = environment.apiUrl + 'repair/getAllByPersonAndDate';
+    let url = environment.apiUrl + '/repair/getAllByPersonAndDate';
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
