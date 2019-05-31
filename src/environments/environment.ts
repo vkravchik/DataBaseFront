@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://angular-coursework.herokuapp.com/rest',
-  apiUrlA: 'https://angular-coursework.herokuapp.com/api/',
+  apiUrl: 'https://vkravchik.herokuapp.com/rest',
+  apiUrlA: 'https://vkravchik.herokuapp.com/api/',
   apiUser: '/users',
   apiDriver: '/drivers',
   apiCategory: '/category',
