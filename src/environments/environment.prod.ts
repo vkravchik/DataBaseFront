@@ -1,3 +1,22 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://angular-coursework.herokuapp.com/rest',
+  apiUrlA: 'https://angular-coursework.herokuapp.com/api/',
+  apiUser: '/users',
+  apiDriver: '/drivers',
+  apiCategory: '/category',
+  apiMarka: '/marka',
+  apiAuto: '/auto',
+  apiBrigada: '/brigada',
+  apiBrigadir: '/brigadir',
+  apiCategoryPersonal: '/categoryPersonal',
+  apiSaleBuy: '/saleBuy',
+  apiHarRoute: '/hardRoute',
+  apiInfrastruct: '/infrastruct',
+  apiPersonal: '/personal',
+  apiProblem: '/problem',
+  apiRepair: '/repair',
+  apiGroup: '/group',
+  apiStreet: '/street',
+  apiRoute: '/route',
 };
